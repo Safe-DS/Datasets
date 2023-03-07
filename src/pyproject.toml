@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "safe-ds-examples"
+version = "0.1.0"
+description = "Ready-to-use examples for the Safe-DS Python library."
+license = "MIT"
+authors = ["Lars Reimann <mail@larsreimann.com>"]
+readme = "../README.md"
+repository = "https://github.com/Safe-DS/Stdlib-Examples"
+keywords = ["data science", "machine learning", "usability", "learnability"]
+packages = [
+    { include = "safeds_examples" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+safe-ds = "^0.1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.1"
+pytest-cov = "^4.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
