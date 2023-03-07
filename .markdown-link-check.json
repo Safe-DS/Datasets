@@ -5,6 +5,9 @@
         },
         {
             "pattern": "^#"
+        },
+        {
+            "pattern": "^https://stdlib-examples.readthedocs.io"
         }
     ]
 }
