@@ -6,3 +6,5 @@
 [![Documentation Status](https://readthedocs.org/projects/stdlib-examples/badge/?version=latest)](https://stdlib-examples.readthedocs.io/en/latest/?badge=latest)
 
 Ready-to-use examples for the [Safe-DS Python Library](https://github.com/Safe-DS/Stdlib).
+
+You can find the full documentation [here](https://stdlib-examples.readthedocs.io/).
