@@ -4,11 +4,12 @@ version = "0.1.0"
 description = "Ready-to-use examples for the Safe-DS Python library."
 license = "MIT"
 authors = ["Lars Reimann <mail@larsreimann.com>"]
-readme = "README.md"
+readme = "docs/README.md"
 repository = "https://github.com/Safe-DS/Stdlib-Examples"
+documentation = "https://stdlib-examples.safe-ds.com"
 keywords = ["data science", "machine learning", "usability", "learnability"]
 packages = [
-    { include = "safeds_examples" },
+    { include = "safeds_examples", from = "src" },
 ]
 
 [tool.poetry.dependencies]
@@ -19,6 +20,23 @@ safe-ds = "^0.2.0"
 pytest = "^7.2.1"
 pytest-cov = "^4.0.0"
 
+[tool.poetry.group.docs.dependencies]
+jupyter = "^1.0.0"
+mkdocs = "^1.4.2"
+mkdocstrings = "^0.20.0"
+mkdocstrings-python = "^0.8.3"
+mkdocs-autorefs = "^0.4.1"
+mkdocs-gen-files = "^0.4.0"
+mkdocs-glightbox = "^0.3.1"
+mkdocs-literate-nav = "^0.6.0"
+mkdocs-material = "^9.1.2"
+mkdocs-section-index = "^0.3.5"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+disallow_incomplete_defs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
