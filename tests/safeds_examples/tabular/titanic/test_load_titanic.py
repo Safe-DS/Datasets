@@ -1,5 +1,5 @@
 from safeds.data.tabular import Table
-from safeds_examples.titanic import load_titanic
+from safeds_examples.tabular import load_titanic
 
 
 def test_load_titanic() -> None:
