@@ -7,6 +7,8 @@ nav:
   - Examples:
     - Titanic: examples/titanic.md
   - API Reference: reference/
+  - Development:
+    - Environment: development/environment.md
 
 # Configuration of MkDocs & Material for MkDocs --------------------------------
 
