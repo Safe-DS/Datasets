@@ -3,7 +3,9 @@ repo_url: https://github.com/Safe-DS/Stdlib-Examples
 repo_name: Safe-DS/Stdlib-Examples
 
 nav:
-  - Home: README.md
+  - Home:
+    - README: README.md
+    - Changelog: CHANGELOG.md
   - Examples:
     - Titanic: examples/titanic.md
   - API Reference: reference/
