@@ -4,7 +4,7 @@ repo_name: Safe-DS/Stdlib-Examples
 
 nav:
   - Home:
-    - README: README.md
+    - README.md
     - Changelog: CHANGELOG.md
   - Examples:
     - Titanic: examples/titanic.md
@@ -37,8 +37,10 @@ theme:
   features:
     - content.code.copy
     - navigation.tabs
+    - navigation.indexes
     - navigation.instant
     - navigation.sections
+    - navigation.top
 
 plugins:
   - mkdocstrings:
@@ -58,6 +60,11 @@ plugins:
   - autorefs
   - glightbox
   - search
+  - mkdocs-jupyter:
+      include: ["*.ipynb"]
+      execute: true
+      allow_errors: false
+      include_source: true
 
 watch:
   - src
