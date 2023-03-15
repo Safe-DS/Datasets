@@ -7,7 +7,7 @@ nav:
     - README.md
     - Changelog: CHANGELOG.md
   - Examples:
-    - Titanic: examples/titanic.md
+    - Titanic: examples/titanic.ipynb
   - API Reference: reference/
   - Development:
     - Environment: development/environment.md
@@ -64,7 +64,6 @@ plugins:
       include: ["*.ipynb"]
       execute: true
       allow_errors: false
-      include_source: true
 
 watch:
   - src
