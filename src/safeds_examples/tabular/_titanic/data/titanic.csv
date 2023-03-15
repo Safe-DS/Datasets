@@ -1,4 +1,4 @@
-Name,Sex,Age,Number of Siblings or Spouses Aboard,Number of Parents or Children Aboard,Ticket Number,Travel Class,Fare,Cabin Number,Port of Embarkation,Survived
+name,sex,age,siblings_spouses,parents_children,ticket,travel_class,fare,cabin,port_embarked,survived
 "Abbing, Mr. Anthony",male,42,0,0,C.A. 5547,3,7.55,,Southampton,0
 "Abbott, Master. Eugene Joseph",male,13,0,2,C.A. 2673,3,20.25,,Southampton,0
 "Abbott, Mr. Rossmore Edward",male,16,1,1,C.A. 2673,3,20.25,,Southampton,0
