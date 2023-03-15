@@ -60,6 +60,11 @@ plugins:
   - autorefs
   - glightbox
   - search
+  - mkdocs-jupyter:
+      include: ["*.ipynb"]
+      execute: true
+      allow_errors: false
+      include_source: true
 
 watch:
   - src
