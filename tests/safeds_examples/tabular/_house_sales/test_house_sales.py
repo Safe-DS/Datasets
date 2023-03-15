@@ -21,29 +21,29 @@ class TestLoadHouseSales:
     def test_schema(self, house_sales: Table) -> None:
         assert house_sales.schema == TableSchema(
             {
-                "bathrooms": FloatColumnType(),
-                "bedrooms": IntColumnType(),
-                "condition": IntColumnType(),
-                "day": IntColumnType(),
-                "floors": FloatColumnType(),
-                "grade": IntColumnType(),
                 "id": IntColumnType(),
+                "year": IntColumnType(),
+                "month": IntColumnType(),
+                "day": IntColumnType(),
+                "zipcode": IntColumnType(),
                 "latitude": FloatColumnType(),
                 "longitude": FloatColumnType(),
-                "month": IntColumnType(),
-                "price": IntColumnType(),
+                "sqft_lot": IntColumnType(),
+                "sqft_living": IntColumnType(),
                 "sqft_above": IntColumnType(),
                 "sqft_basement": IntColumnType(),
-                "sqft_living": IntColumnType(),
-                "sqft_living_15nn": IntColumnType(),
-                "sqft_lot": IntColumnType(),
-                "sqft_lot_15nn": IntColumnType(),
-                "view": IntColumnType(),
+                "floors": FloatColumnType(),
+                "bedrooms": IntColumnType(),
+                "bathrooms": FloatColumnType(),
                 "waterfront": IntColumnType(),
-                "year": IntColumnType(),
+                "view": IntColumnType(),
+                "condition": IntColumnType(),
+                "grade": IntColumnType(),
                 "year_built": IntColumnType(),
                 "year_renovated": IntColumnType(),
-                "zipcode": IntColumnType(),
+                "sqft_lot_15nn": IntColumnType(),
+                "sqft_living_15nn": IntColumnType(),
+                "price": IntColumnType(),
             }
         )
 
@@ -54,11 +54,7 @@ class TestLoadHouseSales:
 
 
 class TestDescribeHouseSalesColumns:
-    @pytest.fixture
-    def house_sales(self) -> Table:
-        return load_house_sales()
-
-    def test_all_columns_have_descriptions(self, house_sales: Table) -> None:
+    def test_all_columns_have_descriptions(self) -> None:
         house_sales = load_house_sales()
         descriptions = describe_house_sales_columns()
 

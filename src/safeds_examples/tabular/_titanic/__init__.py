@@ -1,1 +1,1 @@
-from ._titanic import load_titanic
+from ._titanic import describe_titanic_columns, load_titanic

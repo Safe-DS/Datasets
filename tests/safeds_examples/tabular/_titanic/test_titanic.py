@@ -6,7 +6,8 @@ from safeds.data.tabular.typing import (
     StringColumnType,
     TableSchema,
 )
-from safeds_examples.tabular import load_titanic
+
+from safeds_examples.tabular import describe_titanic_columns, load_titanic
 
 
 class TestLoadTitanic:
@@ -26,21 +27,29 @@ class TestLoadTitanic:
     def test_schema(self, titanic: Table) -> None:
         assert titanic.schema == TableSchema(
             {
-                "Age": FloatColumnType(),
-                "Cabin Number": StringColumnType(),
-                "Fare": FloatColumnType(),
-                "Name": StringColumnType(),
-                "Number of Parents or Children Aboard": IntColumnType(),
-                "Number of Siblings or Spouses Aboard": IntColumnType(),
-                "Port of Embarkation": StringColumnType(),
-                "Sex": StringColumnType(),
-                "Survived": IntColumnType(),
-                "Ticket Number": StringColumnType(),
-                "Travel Class": IntColumnType(),
+                "name": StringColumnType(),
+                "sex": StringColumnType(),
+                "age": FloatColumnType(),
+                "siblings_spouses": IntColumnType(),
+                "parents_children": IntColumnType(),
+                "ticket": StringColumnType(),
+                "travel_class": IntColumnType(),
+                "fare": FloatColumnType(),
+                "cabin": StringColumnType(),
+                "port_embarked": StringColumnType(),
+                "survived": IntColumnType(),
             }
         )
 
     def test_columns_with_missing_values(self, titanic: Table) -> None:
         actual_column_names = {column.name for column in titanic.list_columns_with_missing_values()}
 
-        assert actual_column_names == {"Age", "Port of Embarkation", "Fare", "Cabin Number"}
+        assert actual_column_names == {"age", "port_embarked", "fare", "cabin"}
+
+
+class TestDescribeTitanicColumns:
+    def test_all_columns_have_descriptions(self) -> None:
+        titanic = load_titanic()
+        descriptions = describe_titanic_columns()
+
+        assert set(descriptions.get_column("Name")._data) == set(titanic.get_column_names())
