@@ -36,3 +36,12 @@ mkdocs-jupyter = "^0.23.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers"
+markers = [
+    "smoke: quickly testing core functionality",
+]
+
+[tool.black]
+line-length = 120
