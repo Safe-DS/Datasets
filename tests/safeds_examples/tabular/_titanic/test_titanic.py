@@ -6,7 +6,6 @@ from safeds.data.tabular.typing import (
     StringColumnType,
     TableSchema,
 )
-
 from safeds_examples.tabular import describe_titanic_columns, load_titanic
 
 
