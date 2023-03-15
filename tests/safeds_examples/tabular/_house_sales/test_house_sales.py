@@ -1,11 +1,6 @@
 import pytest
 from safeds.data.tabular import Table
-from safeds.data.tabular.typing import (
-    FloatColumnType,
-    IntColumnType,
-    TableSchema,
-)
-
+from safeds.data.tabular.typing import FloatColumnType, IntColumnType, TableSchema
 from safeds_examples.tabular import describe_house_sales_columns, load_house_sales
 
 
@@ -25,29 +20,31 @@ class TestLoadHouseSales:
 
     def test_schema(self, house_sales: Table) -> None:
         assert house_sales.schema == TableSchema(
-            {'bathrooms': FloatColumnType(),
-             'bedrooms': IntColumnType(),
-             'condition': IntColumnType(),
-             'day': IntColumnType(),
-             'floors': FloatColumnType(),
-             'grade': IntColumnType(),
-             'id': IntColumnType(),
-             'latitude': FloatColumnType(),
-             'longitude': FloatColumnType(),
-             'month': IntColumnType(),
-             'price': IntColumnType(),
-             'sqft_above': IntColumnType(),
-             'sqft_basement': IntColumnType(),
-             'sqft_living': IntColumnType(),
-             'sqft_living_15nn': IntColumnType(),
-             'sqft_lot': IntColumnType(),
-             'sqft_lot_15nn': IntColumnType(),
-             'view': IntColumnType(),
-             'waterfront': IntColumnType(),
-             'year': IntColumnType(),
-             'year_built': IntColumnType(),
-             'year_renovated': IntColumnType(),
-             'zipcode': IntColumnType()}
+            {
+                "bathrooms": FloatColumnType(),
+                "bedrooms": IntColumnType(),
+                "condition": IntColumnType(),
+                "day": IntColumnType(),
+                "floors": FloatColumnType(),
+                "grade": IntColumnType(),
+                "id": IntColumnType(),
+                "latitude": FloatColumnType(),
+                "longitude": FloatColumnType(),
+                "month": IntColumnType(),
+                "price": IntColumnType(),
+                "sqft_above": IntColumnType(),
+                "sqft_basement": IntColumnType(),
+                "sqft_living": IntColumnType(),
+                "sqft_living_15nn": IntColumnType(),
+                "sqft_lot": IntColumnType(),
+                "sqft_lot_15nn": IntColumnType(),
+                "view": IntColumnType(),
+                "waterfront": IntColumnType(),
+                "year": IntColumnType(),
+                "year_built": IntColumnType(),
+                "year_renovated": IntColumnType(),
+                "zipcode": IntColumnType(),
+            }
         )
 
     def test_columns_with_missing_values(self, house_sales: Table) -> None:
