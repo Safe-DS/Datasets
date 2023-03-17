@@ -66,6 +66,9 @@ plugins:
       execute: true
       allow_errors: false
       no_input: true
+  - exclude:
+      glob:
+        - "*.py"
 
 watch:
   - src
