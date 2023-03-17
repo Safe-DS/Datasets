@@ -7,4 +7,14 @@
 
 Ready-to-use examples for the [Safe-DS Python Library](https://github.com/Safe-DS/Stdlib).
 
+## Documentation
+
 You can find the full documentation [here](https://stdlib-examples.safe-ds.com).
+
+## Installation
+
+Get the latest version from [PyPI](https://pypi.org/project/safe-ds-examples/):
+
+```shell
+pip install safe-ds-examples
+```
