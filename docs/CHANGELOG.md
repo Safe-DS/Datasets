@@ -1,3 +1,10 @@
+## [0.4.0](https://github.com/Safe-DS/Stdlib-Examples/compare/v0.3.0...v0.4.0) (2023-03-17)
+
+
+### Features
+
+* add "id" column to Titanic dataset ([#29](https://github.com/Safe-DS/Stdlib-Examples/issues/29)) ([34f1389](https://github.com/Safe-DS/Stdlib-Examples/commit/34f1389142658c95e860715b29c4261dee52b61a))
+
 ## [0.3.0](https://github.com/Safe-DS/Stdlib-Examples/compare/v0.2.1...v0.3.0) (2023-03-15)
 
 
