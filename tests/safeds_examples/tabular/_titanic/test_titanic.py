@@ -26,6 +26,7 @@ class TestLoadTitanic:
     def test_schema(self, titanic: Table) -> None:
         assert titanic.schema == TableSchema(
             {
+                "id": IntColumnType(),
                 "name": StringColumnType(),
                 "sex": StringColumnType(),
                 "age": FloatColumnType(),

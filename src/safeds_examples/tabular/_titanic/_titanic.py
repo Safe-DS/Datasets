@@ -31,6 +31,7 @@ def describe_titanic_columns() -> Table:
 
     return Table(
         [
+            {"Name": "id", "Description": "A unique identifier"},
             {"Name": "name", "Description": "Name of the passenger"},
             {"Name": "sex", "Description": "Sex of the passenger"},
             {"Name": "age", "Description": "Age of the passenger at the time of the accident"},
