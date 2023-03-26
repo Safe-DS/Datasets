@@ -1,5 +1,5 @@
 import pytest
-from safeds.data.tabular import Table
+from safeds.data.tabular.containers import Table
 from safeds.data.tabular.typing import FloatColumnType, IntColumnType, TableSchema
 from safeds_examples.tabular import describe_house_sales_columns, load_house_sales
 
