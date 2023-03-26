@@ -1,7 +1,7 @@
 import pandas as pd
 from IPython.core.display_functions import DisplayHandle
 from IPython.display import display
-from safeds.data.tabular import Table
+from safeds.data.tabular.containers import Table
 
 
 def display_column_descriptions(column_descriptions: Table) -> DisplayHandle:

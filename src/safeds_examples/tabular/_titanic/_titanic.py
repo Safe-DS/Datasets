@@ -1,6 +1,6 @@
 import os
 
-from safeds.data.tabular import Table
+from safeds.data.tabular.containers import Table
 
 _path = os.path.join(os.path.dirname(__file__), "data", "titanic.csv")
 
