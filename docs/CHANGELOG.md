@@ -1,3 +1,10 @@
+## [0.6.0](https://github.com/Safe-DS/Stdlib-Examples/compare/v0.5.0...v0.6.0) (2023-03-26)
+
+
+### Features
+
+* compatibility with `safe-ds` v0.5.0 ([#39](https://github.com/Safe-DS/Stdlib-Examples/issues/39)) ([ac71b90](https://github.com/Safe-DS/Stdlib-Examples/commit/ac71b90404c072e1e511f79114f25332ee4348dc))
+
 ## [0.5.0](https://github.com/Safe-DS/Stdlib-Examples/compare/v0.4.0...v0.5.0) (2023-03-26)
 
 
