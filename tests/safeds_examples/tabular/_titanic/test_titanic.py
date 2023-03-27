@@ -42,7 +42,7 @@ class TestLoadTitanic:
         )
 
     def test_columns_with_missing_values(self, titanic: Table) -> None:
-        actual_column_names = {column.name for column in titanic.list_columns_with_missing_values()}
+        actual_column_names = {column.name for column in titanic.to_columns() if column.has_missing_values()}
 
         assert actual_column_names == {"age", "port_embarked", "fare", "cabin"}
 
