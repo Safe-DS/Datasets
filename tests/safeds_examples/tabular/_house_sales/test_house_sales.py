@@ -48,7 +48,7 @@ class TestLoadHouseSales:
         )
 
     def test_columns_with_missing_values(self, house_sales: Table) -> None:
-        actual_column_names = {column.name for column in house_sales.list_columns_with_missing_values()}
+        actual_column_names = {column.name for column in house_sales.to_columns() if column.has_missing_values()}
 
         assert actual_column_names == set()
 
