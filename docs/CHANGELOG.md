@@ -1,3 +1,11 @@
+## [0.8.0](https://github.com/Safe-DS/Stdlib-Examples/compare/v0.7.0...v0.8.0) (2023-03-29)
+
+
+### Features
+
+* compatibility with `safe-ds` v0.7.0 ([#42](https://github.com/Safe-DS/Stdlib-Examples/issues/42)) ([8962627](https://github.com/Safe-DS/Stdlib-Examples/commit/8962627e4e692906501ea5b0fc84d191a4290900))
+* subclass of `Table` that can include column descriptions ([#43](https://github.com/Safe-DS/Stdlib-Examples/issues/43)) ([56aff62](https://github.com/Safe-DS/Stdlib-Examples/commit/56aff6212f306973d21aecaa8600a8dd2b2fe3c7)), closes [#41](https://github.com/Safe-DS/Stdlib-Examples/issues/41)
+
 ## [0.7.0](https://github.com/Safe-DS/Stdlib-Examples/compare/v0.6.0...v0.7.0) (2023-03-27)
 
 
