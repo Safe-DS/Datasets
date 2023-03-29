@@ -1,7 +1,6 @@
 import os
 
 from safeds.data.tabular.containers import Table
-
 from safeds_examples.tabular.containers import ExampleTable
 
 _path = os.path.join(os.path.dirname(__file__), "data", "house_sales.csv")
@@ -34,16 +33,16 @@ def load_house_sales() -> ExampleTable:
             "floors": "Number of floors",
             "bedrooms": "Number of bedrooms",
             "bathrooms": "Number of bathrooms.\n\n"
-                         "Fractional values indicate that components (toilet/sink/shower/bathtub) are missing.",
+            "Fractional values indicate that components (toilet/sink/shower/bathtub) are missing.",
             "waterfront": "Whether the building overlooks a waterfront (0 = no, 1 = yes)",
             "view": "Rating of the view (1 to 5, higher is better)",
             "condition": "Rating of the condition of the house (1 to 5, higher is better)",
             "grade": "Rating of building construction and design (1 to 13, higher is better)",
             "year_built": "Year the house was built",
             "year_renovated": "Year the house was last renovated.\n\n"
-                              "A value of 0 indicates that it was never renovated.",
+            "A value of 0 indicates that it was never renovated.",
             "sqft_lot_15nn": "Lot area of the 15 nearest neighbors in square feet",
             "sqft_living_15nn": "Interior living space of the 15 nearest neighbors in square feet",
             "price": "Price the house sold for in USD",
-        }
+        },
     )
