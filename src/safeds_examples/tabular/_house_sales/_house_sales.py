@@ -1,69 +1,48 @@
 import os
 
 from safeds.data.tabular.containers import Table
+from safeds_examples.tabular.containers import ExampleTable
 
 _path = os.path.join(os.path.dirname(__file__), "data", "house_sales.csv")
 
 
-def load_house_sales() -> Table:
+def load_house_sales() -> ExampleTable:
     """
     Loads the "House Sales" dataset.
 
     Returns
     -------
-    Table
+    ExampleTable
         The "House Sales" dataset.
     """
 
-    return Table.from_csv_file(_path)
-
-
-def describe_house_sales_columns() -> Table:
-    """
-    Returns a `Table` with two columns `"Name"` and `"Description"`, containing the name of a column in the "House
-    Sales" dataset and its description respectively.
-
-    Returns
-    -------
-    Table
-        A `Table` with names and descriptions for all columns of the "House Sales" dataset.
-    """
-
-    return Table(
-        [
-            {"Name": "id", "Description": "A unique identifier"},
-            {"Name": "year", "Description": "Year of sale"},
-            {"Name": "month", "Description": "Month of sale"},
-            {"Name": "day", "Description": "Day of sale"},
-            {"Name": "zipcode", "Description": "Zipcode"},
-            {"Name": "latitude", "Description": "Latitude"},
-            {"Name": "longitude", "Description": "Longitude"},
-            {"Name": "sqft_lot", "Description": "Lot area in square feet"},
-            {"Name": "sqft_living", "Description": "Interior living space in square feet"},
-            {"Name": "sqft_above", "Description": "Interior living space above ground in square feet"},
-            {"Name": "sqft_basement", "Description": "Interior living space below ground in square feet"},
-            {"Name": "floors", "Description": "Number of floors"},
-            {"Name": "bedrooms", "Description": "Number of bedrooms"},
-            {
-                "Name": "bathrooms",
-                "Description": "Number of bathrooms.\n\n"
-                "Fractional values indicate that components (toilet/sink/shower/bathtub) are missing.",
-            },
-            {"Name": "waterfront", "Description": "Whether the building overlooks a waterfront (0 = no, 1 = yes)"},
-            {"Name": "view", "Description": "Rating of the view (1 to 5, higher is better)"},
-            {"Name": "condition", "Description": "Rating of the condition of the house (1 to 5, higher is better)"},
-            {"Name": "grade", "Description": "Rating of building construction and design (1 to 13, higher is better)"},
-            {"Name": "year_built", "Description": "Year the house was built"},
-            {
-                "Name": "year_renovated",
-                "Description": "Year the house was last renovated.\n\n"
-                "A value of 0 indicates that it was never renovated.",
-            },
-            {"Name": "sqft_lot_15nn", "Description": "Lot area of the 15 nearest neighbors in square feet"},
-            {
-                "Name": "sqft_living_15nn",
-                "Description": "Interior living space of the 15 nearest neighbors in square feet",
-            },
-            {"Name": "price", "Description": "Price the house sold for in USD"},
-        ]
+    return ExampleTable(
+        Table.from_csv_file(_path),
+        column_descriptions={
+            "id": "A unique identifier",
+            "year": "Year of sale",
+            "month": "Month of sale",
+            "day": "Day of sale",
+            "zipcode": "Zipcode",
+            "latitude": "Latitude",
+            "longitude": "Longitude",
+            "sqft_lot": "Lot area in square feet",
+            "sqft_living": "Interior living space in square feet",
+            "sqft_above": "Interior living space above ground in square feet",
+            "sqft_basement": "Interior living space below ground in square feet",
+            "floors": "Number of floors",
+            "bedrooms": "Number of bedrooms",
+            "bathrooms": "Number of bathrooms.\n\n"
+            "Fractional values indicate that components (toilet/sink/shower/bathtub) are missing.",
+            "waterfront": "Whether the building overlooks a waterfront (0 = no, 1 = yes)",
+            "view": "Rating of the view (1 to 5, higher is better)",
+            "condition": "Rating of the condition of the house (1 to 5, higher is better)",
+            "grade": "Rating of building construction and design (1 to 13, higher is better)",
+            "year_built": "Year the house was built",
+            "year_renovated": "Year the house was last renovated.\n\n"
+            "A value of 0 indicates that it was never renovated.",
+            "sqft_lot_15nn": "Lot area of the 15 nearest neighbors in square feet",
+            "sqft_living_15nn": "Interior living space of the 15 nearest neighbors in square feet",
+            "price": "Price the house sold for in USD",
+        },
     )

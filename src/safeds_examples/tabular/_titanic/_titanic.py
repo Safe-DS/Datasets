@@ -1,47 +1,35 @@
 import os
 
 from safeds.data.tabular.containers import Table
+from safeds_examples.tabular.containers import ExampleTable
 
 _path = os.path.join(os.path.dirname(__file__), "data", "titanic.csv")
 
 
-def load_titanic() -> Table:
+def load_titanic() -> ExampleTable:
     """
     Loads the "Titanic" dataset.
 
     Returns
     -------
-    Table
+    ExampleTable
         The "Titanic" dataset.
     """
 
-    return Table.from_csv_file(_path)
-
-
-def describe_titanic_columns() -> Table:
-    """
-    Returns a `Table` with two columns `"Name"` and `"Description"`, containing the name of a column in the "Titanic"
-    dataset and its description respectively.
-
-    Returns
-    -------
-    Table
-        A `Table` with names and descriptions for all columns of the "Titanic" dataset.
-    """
-
-    return Table(
-        [
-            {"Name": "id", "Description": "A unique identifier"},
-            {"Name": "name", "Description": "Name of the passenger"},
-            {"Name": "sex", "Description": "Sex of the passenger"},
-            {"Name": "age", "Description": "Age of the passenger at the time of the accident"},
-            {"Name": "siblings_spouses", "Description": "Number of siblings or spouses aboard"},
-            {"Name": "parents_children", "Description": "Number of parents or children aboard"},
-            {"Name": "ticket", "Description": "Ticket number"},
-            {"Name": "travel_class", "Description": "Travel class (1 = first, 2 = second, 3 = third)"},
-            {"Name": "fare", "Description": "Fare"},
-            {"Name": "cabin", "Description": "Cabin number"},
-            {"Name": "port_embarked", "Description": "Port of embarkation"},
-            {"Name": "survived", "Description": "Whether the passenger survived the accident"},
-        ]
+    return ExampleTable(
+        Table.from_csv_file(_path),
+        column_descriptions={
+            "id": "A unique identifier",
+            "name": "Name of the passenger",
+            "sex": "Sex of the passenger",
+            "age": "Age of the passenger at the time of the accident",
+            "siblings_spouses": "Number of siblings or spouses aboard",
+            "parents_children": "Number of parents or children aboard",
+            "ticket": "Ticket number",
+            "travel_class": "Travel class (1 = first, 2 = second, 3 = third)",
+            "fare": "Fare",
+            "cabin": "Cabin number",
+            "port_embarked": "Port of embarkation",
+            "survived": "Whether the passenger survived the accident (0 = no, 1 = yes)",
+        },
     )
