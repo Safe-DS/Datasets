@@ -2,7 +2,7 @@ import os
 
 from safeds.data.tabular.containers import Table
 
-from safeds_examples.tabular import ExampleTable
+from safeds_examples.tabular.containers import ExampleTable
 
 _path = os.path.join(os.path.dirname(__file__), "data", "titanic.csv")
 

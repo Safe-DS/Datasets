@@ -2,7 +2,7 @@ import pytest
 from safeds.data.tabular.containers import Table, Column
 from safeds.exceptions import UnknownColumnNameError
 
-from safeds_examples.tabular import ExampleTable
+from safeds_examples.tabular.containers import ExampleTable
 
 
 @pytest.fixture
