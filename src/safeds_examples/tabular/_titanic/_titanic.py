@@ -15,7 +15,7 @@ def load_titanic() -> Table:
         The "Titanic" dataset.
     """
 
-    return Table.from_csv(_path)
+    return Table.from_csv_file(_path)
 
 
 def describe_titanic_columns() -> Table:
