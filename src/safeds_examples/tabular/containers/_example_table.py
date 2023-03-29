@@ -20,7 +20,6 @@ class ExampleTable(Table):
     """
 
     def __init__(self, table: Table, column_descriptions: dict[str, str]) -> None:
-
         # Check that all column names in `descriptions` exist in `table`
         invalid_column_names = set(column_descriptions.keys()) - set(table.get_column_names())
         if invalid_column_names:

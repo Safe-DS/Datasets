@@ -1,7 +1,6 @@
 import pytest
-from safeds.data.tabular.containers import Table, Column
+from safeds.data.tabular.containers import Column, Table
 from safeds.exceptions import UnknownColumnNameError
-
 from safeds_examples.tabular.containers import ExampleTable
 
 
@@ -14,7 +13,7 @@ def example_table() -> ExampleTable:
                 Column("b", [4, 5, 6]),
             ]
         ),
-        column_descriptions={"a": "The first column"}
+        column_descriptions={"a": "The first column"},
     )
 
 
@@ -28,7 +27,7 @@ class TestInit:
                         Column("b", [4, 5, 6]),
                     ]
                 ),
-                column_descriptions={"c": "The first column"}
+                column_descriptions={"c": "The first column"},
             )
 
 

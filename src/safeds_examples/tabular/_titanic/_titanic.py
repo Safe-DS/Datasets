@@ -1,7 +1,6 @@
 import os
 
 from safeds.data.tabular.containers import Table
-
 from safeds_examples.tabular.containers import ExampleTable
 
 _path = os.path.join(os.path.dirname(__file__), "data", "titanic.csv")
@@ -32,5 +31,5 @@ def load_titanic() -> ExampleTable:
             "cabin": "Cabin number",
             "port_embarked": "Port of embarkation",
             "survived": "Whether the passenger survived the accident (0 = no, 1 = yes)",
-        }
+        },
     )
