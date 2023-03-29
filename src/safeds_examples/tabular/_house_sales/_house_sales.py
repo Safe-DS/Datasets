@@ -15,7 +15,7 @@ def load_house_sales() -> Table:
         The "House Sales" dataset.
     """
 
-    return Table.from_csv(_path)
+    return Table.from_csv_file(_path)
 
 
 def describe_house_sales_columns() -> Table:
