@@ -1,7 +1,7 @@
 import pytest
 from safeds.data.tabular.containers import Table
 from safeds.data.tabular.typing import FloatColumnType, IntColumnType, TableSchema
-from safeds_examples.tabular import describe_house_sales_columns, load_house_sales
+from safeds_examples.tabular import load_house_sales
 
 
 class TestLoadHouseSales:
@@ -53,9 +53,9 @@ class TestLoadHouseSales:
         assert actual_column_names == set()
 
 
-class TestDescribeHouseSalesColumns:
+class TestColumnDescriptions:
     def test_all_columns_have_descriptions(self) -> None:
         house_sales = load_house_sales()
-        descriptions = describe_house_sales_columns()
+        descriptions = house_sales.column_descriptions
 
         assert set(descriptions.get_column("Name")._data) == set(house_sales.get_column_names())

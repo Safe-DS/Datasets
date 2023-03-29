@@ -6,7 +6,7 @@ from safeds.data.tabular.typing import (
     StringColumnType,
     TableSchema,
 )
-from safeds_examples.tabular import describe_titanic_columns, load_titanic
+from safeds_examples.tabular import load_titanic
 
 
 class TestLoadTitanic:
@@ -47,9 +47,9 @@ class TestLoadTitanic:
         assert actual_column_names == {"age", "port_embarked", "fare", "cabin"}
 
 
-class TestDescribeTitanicColumns:
+class TestColumnDescriptions:
     def test_all_columns_have_descriptions(self) -> None:
         titanic = load_titanic()
-        descriptions = describe_titanic_columns()
+        descriptions = titanic.column_descriptions
 
         assert set(descriptions.get_column("Name")._data) == set(titanic.get_column_names())

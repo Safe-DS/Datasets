@@ -1,2 +1,3 @@
-from ._house_sales import describe_house_sales_columns, load_house_sales
-from ._titanic import describe_titanic_columns, load_titanic
+from ._containers import ExampleTable
+from ._house_sales import load_house_sales
+from ._titanic import load_titanic
