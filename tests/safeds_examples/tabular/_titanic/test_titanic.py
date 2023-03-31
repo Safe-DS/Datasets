@@ -1,11 +1,6 @@
 import pytest
 from safeds.data.tabular.containers import Table
-from safeds.data.tabular.typing import (
-    FloatColumnType,
-    IntColumnType,
-    StringColumnType,
-    TableSchema,
-)
+from safeds.data.tabular.typing import Integer, RealNumber, Schema, String
 from safeds_examples.tabular import load_titanic
 
 
@@ -24,20 +19,20 @@ class TestLoadTitanic:
         assert titanic.count_rows() == 1309
 
     def test_schema(self, titanic: Table) -> None:
-        assert titanic.schema == TableSchema(
+        assert titanic.schema == Schema(
             {
-                "id": IntColumnType(),
-                "name": StringColumnType(),
-                "sex": StringColumnType(),
-                "age": FloatColumnType(),
-                "siblings_spouses": IntColumnType(),
-                "parents_children": IntColumnType(),
-                "ticket": StringColumnType(),
-                "travel_class": IntColumnType(),
-                "fare": FloatColumnType(),
-                "cabin": StringColumnType(),
-                "port_embarked": StringColumnType(),
-                "survived": IntColumnType(),
+                "id": Integer(),
+                "name": String(),
+                "sex": String(),
+                "age": RealNumber(),
+                "siblings_spouses": Integer(),
+                "parents_children": Integer(),
+                "ticket": String(),
+                "travel_class": Integer(),
+                "fare": RealNumber(),
+                "cabin": String(),
+                "port_embarked": String(),
+                "survived": Integer(),
             }
         )
 
