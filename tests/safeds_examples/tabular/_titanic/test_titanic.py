@@ -1,11 +1,6 @@
 import pytest
 from safeds.data.tabular.containers import Table
-from safeds.data.tabular.typing import (
-    RealNumber,
-    Integer,
-    String,
-    Schema,
-)
+from safeds.data.tabular.typing import Integer, RealNumber, Schema, String
 from safeds_examples.tabular import load_titanic
 
 

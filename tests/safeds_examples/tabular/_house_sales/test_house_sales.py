@@ -1,6 +1,6 @@
 import pytest
 from safeds.data.tabular.containers import Table
-from safeds.data.tabular.typing import RealNumber, Integer, Schema
+from safeds.data.tabular.typing import Integer, RealNumber, Schema
 from safeds_examples.tabular import load_house_sales
 
 
