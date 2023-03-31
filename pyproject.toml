@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "safe-ds-examples"
-version = "0.8.0"
+version = "0.9.0"
 description = "Ready-to-use examples for the Safe-DS Python library."
 license = "MIT"
 authors = ["Lars Reimann <mail@larsreimann.com>"]
