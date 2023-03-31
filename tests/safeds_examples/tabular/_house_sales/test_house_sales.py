@@ -1,6 +1,6 @@
 import pytest
 from safeds.data.tabular.containers import Table
-from safeds.data.tabular.typing import FloatColumnType, IntColumnType, TableSchema
+from safeds.data.tabular.typing import RealNumber, Integer, Schema
 from safeds_examples.tabular import load_house_sales
 
 
@@ -19,31 +19,31 @@ class TestLoadHouseSales:
         assert house_sales.count_rows() == 21613
 
     def test_schema(self, house_sales: Table) -> None:
-        assert house_sales.schema == TableSchema(
+        assert house_sales.schema == Schema(
             {
-                "id": IntColumnType(),
-                "year": IntColumnType(),
-                "month": IntColumnType(),
-                "day": IntColumnType(),
-                "zipcode": IntColumnType(),
-                "latitude": FloatColumnType(),
-                "longitude": FloatColumnType(),
-                "sqft_lot": IntColumnType(),
-                "sqft_living": IntColumnType(),
-                "sqft_above": IntColumnType(),
-                "sqft_basement": IntColumnType(),
-                "floors": FloatColumnType(),
-                "bedrooms": IntColumnType(),
-                "bathrooms": FloatColumnType(),
-                "waterfront": IntColumnType(),
-                "view": IntColumnType(),
-                "condition": IntColumnType(),
-                "grade": IntColumnType(),
-                "year_built": IntColumnType(),
-                "year_renovated": IntColumnType(),
-                "sqft_lot_15nn": IntColumnType(),
-                "sqft_living_15nn": IntColumnType(),
-                "price": IntColumnType(),
+                "id": Integer(),
+                "year": Integer(),
+                "month": Integer(),
+                "day": Integer(),
+                "zipcode": Integer(),
+                "latitude": RealNumber(),
+                "longitude": RealNumber(),
+                "sqft_lot": Integer(),
+                "sqft_living": Integer(),
+                "sqft_above": Integer(),
+                "sqft_basement": Integer(),
+                "floors": RealNumber(),
+                "bedrooms": Integer(),
+                "bathrooms": RealNumber(),
+                "waterfront": Integer(),
+                "view": Integer(),
+                "condition": Integer(),
+                "grade": Integer(),
+                "year_built": Integer(),
+                "year_renovated": Integer(),
+                "sqft_lot_15nn": Integer(),
+                "sqft_living_15nn": Integer(),
+                "price": Integer(),
             }
         )
 
