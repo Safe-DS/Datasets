@@ -5,11 +5,11 @@ from safeds_examples.tabular import load_house_sales
 
 
 class TestLoadHouseSales:
-    @pytest.fixture
+    @pytest.fixture()
     def house_sales(self) -> Table:
         return load_house_sales()
 
-    @pytest.mark.smoke
+    @pytest.mark.smoke()
     def test_returns_table(self) -> None:
         house_sales = load_house_sales()
 
@@ -44,7 +44,7 @@ class TestLoadHouseSales:
                 "sqft_lot_15nn": Integer(),
                 "sqft_living_15nn": Integer(),
                 "price": Integer(),
-            }
+            },
         )
 
     def test_columns_with_missing_values(self, house_sales: Table) -> None:

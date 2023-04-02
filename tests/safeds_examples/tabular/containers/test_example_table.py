@@ -4,14 +4,14 @@ from safeds.exceptions import UnknownColumnNameError
 from safeds_examples.tabular.containers import ExampleTable
 
 
-@pytest.fixture
+@pytest.fixture()
 def example_table() -> ExampleTable:
     return ExampleTable(
         Table.from_columns(
             [
                 Column("a", [1, 2, 3]),
                 Column("b", [4, 5, 6]),
-            ]
+            ],
         ),
         column_descriptions={"a": "The first column"},
     )
@@ -25,7 +25,7 @@ class TestInit:
                     [
                         Column("a", [1, 2, 3]),
                         Column("b", [4, 5, 6]),
-                    ]
+                    ],
                 ),
                 column_descriptions={"c": "The first column"},
             )
@@ -37,7 +37,7 @@ class TestColumnDescriptions:
             [
                 Column("Name", ["a", "b"]),
                 Column("Description", ["The first column", ""]),
-            ]
+            ],
         )
 
 
