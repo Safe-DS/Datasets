@@ -31,15 +31,15 @@ class ExampleTable(Table):
     @property
     def column_descriptions(self) -> Table:
         """
-        Returns a `Table` with two columns `"Name"` and `"Description"`, containing the name of a column and its
-        description respectively.
-        """
+        Return a `Table` contain the name of a column and its description.
 
+        The name is stored in a column called `"Name"` and the description in a column called `"Description"`.
+        """
         return Table(
             [
                 {"Name": column_name, "Description": self.get_column_description(column_name)}
                 for column_name in self.get_column_names()
-            ]
+            ],
         )
 
     def get_column_description(self, column_name: str) -> str:
@@ -61,7 +61,6 @@ class ExampleTable(Table):
         UnknownColumnNameError
             If no column with the given name exists.
         """
-
         if column_name not in self.get_column_names():
             raise UnknownColumnNameError([column_name])
 

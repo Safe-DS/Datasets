@@ -1,23 +1,23 @@
-import os
+from pathlib import Path
 
 from safeds.data.tabular.containers import Table
+
 from safeds_examples.tabular.containers import ExampleTable
 
-_path = os.path.join(os.path.dirname(__file__), "data", "house_sales.csv")
+_path = Path(__file__).parent / "data" / "house_sales.csv"
 
 
 def load_house_sales() -> ExampleTable:
     """
-    Loads the "House Sales" dataset.
+    Load the "House Sales" dataset.
 
     Returns
     -------
     ExampleTable
         The "House Sales" dataset.
     """
-
     return ExampleTable(
-        Table.from_csv_file(_path),
+        Table.from_csv_file(str(_path)),
         column_descriptions={
             "id": "A unique identifier",
             "year": "Year of sale",

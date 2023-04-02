@@ -1,3 +1,5 @@
+"""Display column descriptions."""
+
 import pandas as pd
 from IPython.core.display_functions import DisplayHandle
 from IPython.display import display
@@ -6,7 +8,7 @@ from safeds.data.tabular.containers import Table
 
 def display_column_descriptions(column_descriptions: Table) -> DisplayHandle:
     """
-    Displays a Table containing the column descriptions.
+    Display a Table containing the column descriptions.
 
     Parameters
     ----------
@@ -18,7 +20,6 @@ def display_column_descriptions(column_descriptions: Table) -> DisplayHandle:
     DisplayHandle
         The display handle.
     """
-
     # Remember the current value of the max_colwidth option
     max_colwidth = pd.get_option("max_colwidth")
 
@@ -33,7 +34,7 @@ def display_column_descriptions(column_descriptions: Table) -> DisplayHandle:
             **{
                 "text-align": "left",
                 "white-space": "pre-wrap",
-            }
+            },
         )
     )
     result = display(styler)

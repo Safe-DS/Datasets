@@ -1,23 +1,23 @@
-import os
+from pathlib import Path
 
 from safeds.data.tabular.containers import Table
+
 from safeds_examples.tabular.containers import ExampleTable
 
-_path = os.path.join(os.path.dirname(__file__), "data", "titanic.csv")
+_path = Path(__file__).parent / "data" / "titanic.csv"
 
 
 def load_titanic() -> ExampleTable:
     """
-    Loads the "Titanic" dataset.
+    Load the "Titanic" dataset.
 
     Returns
     -------
     ExampleTable
         The "Titanic" dataset.
     """
-
     return ExampleTable(
-        Table.from_csv_file(_path),
+        Table.from_csv_file(str(_path)),
         column_descriptions={
             "id": "A unique identifier",
             "name": "Name of the passenger",

@@ -5,11 +5,11 @@ from safeds_examples.tabular import load_titanic
 
 
 class TestLoadTitanic:
-    @pytest.fixture
+    @pytest.fixture()
     def titanic(self) -> Table:
         return load_titanic()
 
-    @pytest.mark.smoke
+    @pytest.mark.smoke()
     def test_returns_table(self) -> None:
         titanic = load_titanic()
 
@@ -33,7 +33,7 @@ class TestLoadTitanic:
                 "cabin": String(),
                 "port_embarked": String(),
                 "survived": Integer(),
-            }
+            },
         )
 
     def test_columns_with_missing_values(self, titanic: Table) -> None:
