@@ -1,5 +1,5 @@
 from safeds.data.tabular.containers import Table
-from safeds.exceptions import UnknownColumnNameError
+from safeds.data.tabular.exceptions import UnknownColumnNameError
 
 
 class ExampleTable(Table):
