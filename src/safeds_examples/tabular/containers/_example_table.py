@@ -21,7 +21,7 @@ class ExampleTable(Table):
 
     def __init__(self, table: Table, column_descriptions: dict[str, str]) -> None:
         # Check that all column names in `descriptions` exist in `table`
-        invalid_column_names = set(column_descriptions.keys()) - set(table.get_column_names())
+        invalid_column_names = set(column_descriptions.keys()) - set(table.column_names)
         if invalid_column_names:
             raise UnknownColumnNameError(list(invalid_column_names))
 
@@ -38,7 +38,7 @@ class ExampleTable(Table):
         return Table(
             [
                 {"Name": column_name, "Description": self.get_column_description(column_name)}
-                for column_name in self.get_column_names()
+                for column_name in self.column_names
             ],
         )
 
@@ -61,7 +61,7 @@ class ExampleTable(Table):
         UnknownColumnNameError
             If no column with the given name exists.
         """
-        if column_name not in self.get_column_names():
+        if column_name not in self.column_names:
             raise UnknownColumnNameError([column_name])
 
         return self._descriptions.get(column_name, "")
