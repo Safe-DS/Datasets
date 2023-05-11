@@ -41,7 +41,7 @@ class ExampleTable(Table):
             {
                 "Name": self.column_names,
                 "Description": [self.get_column_description(column_name) for column_name in self.column_names],
-            }
+            },
         )
 
     def get_column_description(self, column_name: str) -> str:
