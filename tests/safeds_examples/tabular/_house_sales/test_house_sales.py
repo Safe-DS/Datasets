@@ -16,7 +16,7 @@ class TestLoadHouseSales:
         assert isinstance(house_sales, Table)
 
     def test_row_count(self, house_sales: Table) -> None:
-        assert house_sales.n_rows == 21613
+        assert house_sales.number_of_rows == 21613
 
     def test_schema(self, house_sales: Table) -> None:
         assert house_sales.schema == Schema(
