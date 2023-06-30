@@ -14,7 +14,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-safe-ds = ">=0.13,<0.14"
+safe-ds = ">=0.14,<0.15"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.1"
