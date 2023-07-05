@@ -18,3 +18,14 @@ pip install safe-ds-examples
 ## Documentation
 
 You can find the full documentation [here](https://stdlib-examples.safeds.com).
+
+## Contributing
+
+We welcome contributions from everyone. As a starting point, check the following resources:
+
+* [Setting up a development environment](https://stdlib-examples.safeds.com/en/latest/development/environment/)
+* [Contributing page](https://github.com/Safe-DS/Stdlib-Examples/contribute)
+
+If you need further help, please [use our discussion forum][forum].
+
+[forum]: https://github.com/orgs/Safe-DS/discussions
