@@ -1,3 +1,43 @@
+## [0.14.0](https://github.com/Safe-DS/Stdlib-Examples/compare/v0.13.0...v0.14.0) (2023-06-30)
+
+
+### Features
+
+* compatibility with `safe-ds` v0.14.0 ([#73](https://github.com/Safe-DS/Stdlib-Examples/issues/73)) ([3c1a984](https://github.com/Safe-DS/Stdlib-Examples/commit/3c1a984d186f15517b7b3ffb208eb12b5eaeb3df))
+
+## [0.13.0](https://github.com/Safe-DS/Stdlib-Examples/compare/v0.12.0...v0.13.0) (2023-06-01)
+
+
+### Features
+
+* compatibility with `safe-ds` v0.13.0 ([#72](https://github.com/Safe-DS/Stdlib-Examples/issues/72)) ([41b4378](https://github.com/Safe-DS/Stdlib-Examples/commit/41b4378a80064fe3fc1ef834ca59e136ee65db41))
+
+## [0.12.0](https://github.com/Safe-DS/Stdlib-Examples/compare/v0.11.0...v0.12.0) (2023-05-11)
+
+
+### Features
+
+* compatibility with `safe-ds` v0.12.0 ([#63](https://github.com/Safe-DS/Stdlib-Examples/issues/63)) ([356e3a4](https://github.com/Safe-DS/Stdlib-Examples/commit/356e3a492f4df42748a8dbb31c36423b601f7463))
+
+## [0.11.0](https://github.com/Safe-DS/Stdlib-Examples/compare/v0.10.0...v0.11.0) (2023-04-22)
+
+
+### Features
+
+* compatibility with `safe-ds` v0.11.0 ([#53](https://github.com/Safe-DS/Stdlib-Examples/issues/53)) ([462ec46](https://github.com/Safe-DS/Stdlib-Examples/commit/462ec46240c25f47946f153866b518b6857f73f3))
+
+## [0.10.0](https://github.com/Safe-DS/Stdlib-Examples/compare/v0.9.1...v0.10.0) (2023-04-13)
+
+
+### Features
+
+* compatibility with `safe-ds` v0.10.0 ([#49](https://github.com/Safe-DS/Stdlib-Examples/issues/49)) ([4f7d3b8](https://github.com/Safe-DS/Stdlib-Examples/commit/4f7d3b84cc2cbd1e445824516f5422598b5556a4))
+
+
+### Bug Fixes
+
+* lower bound for `safe-ds` ([8dc748f](https://github.com/Safe-DS/Stdlib-Examples/commit/8dc748f43e3676b99e626953d67f909339dae7de))
+
 ## [0.9.1](https://github.com/Safe-DS/Stdlib-Examples/compare/v0.9.0...v0.9.1) (2023-04-04)
 
 

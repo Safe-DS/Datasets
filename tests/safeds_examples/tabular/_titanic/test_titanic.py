@@ -16,7 +16,7 @@ class TestLoadTitanic:
         assert isinstance(titanic, Table)
 
     def test_row_count(self, titanic: Table) -> None:
-        assert titanic.count_rows() == 1309
+        assert titanic.number_of_rows == 1309
 
     def test_schema(self, titanic: Table) -> None:
         assert titanic.schema == Schema(
@@ -47,4 +47,4 @@ class TestColumnDescriptions:
         titanic = load_titanic()
         descriptions = titanic.column_descriptions
 
-        assert set(descriptions.get_column("Name")._data) == set(titanic.get_column_names())
+        assert set(descriptions.get_column("Name")._data) == set(titanic.column_names)
