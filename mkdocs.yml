@@ -1,6 +1,7 @@
 site_name: Safe-DS Python Library - Examples
 repo_url: https://github.com/Safe-DS/Stdlib-Examples
 repo_name: Safe-DS/Stdlib-Examples
+edit_uri: edit/main/docs/
 site_url: !ENV READTHEDOCS_CANONICAL_URL
 
 nav:
