@@ -1,6 +1,6 @@
 import pytest
 from safeds.data.tabular.containers import Table
-from safeds.data.tabular.typing import Integer, RealNumber, Schema, String
+from safeds.data.tabular.typing import Integer, RealNumber, Schema, String, Anything
 from safeds_examples.tabular import load_titanic
 
 
@@ -24,14 +24,14 @@ class TestLoadTitanic:
                 "id": Integer(),
                 "name": String(),
                 "sex": String(),
-                "age": RealNumber(),
+                "age": RealNumber(is_nullable=True),
                 "siblings_spouses": Integer(),
                 "parents_children": Integer(),
                 "ticket": String(),
                 "travel_class": Integer(),
-                "fare": RealNumber(),
-                "cabin": String(),
-                "port_embarked": String(),
+                "fare": RealNumber(is_nullable=True),
+                "cabin": Anything(is_nullable=True),
+                "port_embarked": Anything(is_nullable=True),
                 "survived": Integer(),
             },
         )
