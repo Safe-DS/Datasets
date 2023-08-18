@@ -5,8 +5,8 @@ description = "Ready-to-use examples for the Safe-DS Python library."
 license = "MIT"
 authors = ["Lars Reimann <mail@larsreimann.com>"]
 readme = "docs/README.md"
-repository = "https://github.com/Safe-DS/Stdlib-Examples"
-documentation = "https://stdlib-examples.safe-ds.com"
+repository = "https://github.com/Safe-DS/Library-Examples"
+documentation = "https://library-examples.safe-ds.com"
 keywords = ["data-science", "machine-learning", "usability", "learnability"]
 packages = [
     { include = "safeds_examples", from = "src" },
