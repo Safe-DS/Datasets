@@ -1,3 +1,10 @@
+## [0.16.0](https://github.com/Safe-DS/Library-Examples/compare/v0.15.0...v0.16.0) (2023-11-22)
+
+
+### Features
+
+* drop Python 3.10 and add Python 3.12 ([#104](https://github.com/Safe-DS/Library-Examples/issues/104)) ([eae4020](https://github.com/Safe-DS/Library-Examples/commit/eae402047fd277f5a5a01074048fc658adcce9b0))
+
 ## [0.15.0](https://github.com/Safe-DS/Library-Examples/compare/v0.14.0...v0.15.0) (2023-07-14)
 
 
