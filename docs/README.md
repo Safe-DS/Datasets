@@ -1,4 +1,4 @@
-# Safe-DS Python Library Examples
+# Safe-DS Python Library - Examples
 
 [![PyPI](https://img.shields.io/pypi/v/safe-ds-examples)](https://pypi.org/project/safe-ds-examples)
 [![Main](https://github.com/Safe-DS/Library-Examples/actions/workflows/main.yml/badge.svg)](https://github.com/Safe-DS/Library-Examples/actions/workflows/main.yml)

@@ -1,6 +1,6 @@
 # Project Guidelines
 
-This document describes general guidelines for the Safe-DS Python Library Examples.
+This document describes general guidelines for the Safe-DS Python Library - Examples.
 
 ## Docstrings
 
