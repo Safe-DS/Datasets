@@ -13,8 +13,8 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.11,<3.13"
-safe-ds = ">=0.16,<0.17"
+python = "^3.11,<3.12"
+safe-ds = ">=0.17,<0.18"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.1"
