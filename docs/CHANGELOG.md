@@ -1,3 +1,10 @@
+## [0.17.0](https://github.com/Safe-DS/Library-Examples/compare/v0.16.0...v0.17.0) (2024-01-11)
+
+
+### Features
+
+* compatibility with safe-ds v0.17.0 ([#121](https://github.com/Safe-DS/Library-Examples/issues/121)) ([bd12659](https://github.com/Safe-DS/Library-Examples/commit/bd12659dc45388e91bad972279cb0bd2bf83a49a))
+
 ## [0.16.0](https://github.com/Safe-DS/Library-Examples/compare/v0.15.0...v0.16.0) (2023-11-22)
 
 
