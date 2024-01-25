@@ -13,7 +13,7 @@ def load_house_sales() -> ExampleTable:
 
     Returns
     -------
-    ExampleTable
+    house_sales :
         The "House Sales" dataset.
     """
     return ExampleTable(
@@ -32,15 +32,18 @@ def load_house_sales() -> ExampleTable:
             "sqft_basement": "Interior living space below ground in square feet",
             "floors": "Number of floors",
             "bedrooms": "Number of bedrooms",
-            "bathrooms": "Number of bathrooms.\n\n"
-            "Fractional values indicate that components (toilet/sink/shower/bathtub) are missing.",
+            "bathrooms": (
+                "Number of bathrooms.\n\n"
+                "Fractional values indicate that components (toilet/sink/shower/bathtub) are missing."
+            ),
             "waterfront": "Whether the building overlooks a waterfront (0 = no, 1 = yes)",
             "view": "Rating of the view (1 to 5, higher is better)",
             "condition": "Rating of the condition of the house (1 to 5, higher is better)",
             "grade": "Rating of building construction and design (1 to 13, higher is better)",
             "year_built": "Year the house was built",
-            "year_renovated": "Year the house was last renovated.\n\n"
-            "A value of 0 indicates that it was never renovated.",
+            "year_renovated": (
+                "Year the house was last renovated.\n\nA value of 0 indicates that it was never renovated."
+            ),
             "sqft_lot_15nn": "Lot area of the 15 nearest neighbors in square feet",
             "sqft_living_15nn": "Interior living space of the 15 nearest neighbors in square feet",
             "price": "Price the house sold for in USD",

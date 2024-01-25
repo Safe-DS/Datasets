@@ -8,9 +8,9 @@ class ExampleTable(Table):
 
     Parameters
     ----------
-    table : Table
+    table
         The table.
-    column_descriptions : dict[str, str]
+    column_descriptions
         A dictionary mapping column names to their descriptions.
 
     Raises
@@ -50,12 +50,12 @@ class ExampleTable(Table):
 
         Parameters
         ----------
-        column_name : str
+        column_name
             The name of the column.
 
         Returns
         -------
-        description : str
+        column_description :
             The description of the column.
 
         Raises
