@@ -13,7 +13,7 @@ def load_house_sales() -> ExampleTable:
 
     Returns
     -------
-    ExampleTable
+    house_sales :
         The "House Sales" dataset.
     """
     return ExampleTable(

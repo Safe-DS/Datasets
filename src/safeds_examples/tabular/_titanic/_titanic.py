@@ -13,7 +13,7 @@ def load_titanic() -> ExampleTable:
 
     Returns
     -------
-    ExampleTable
+    titanic :
         The "Titanic" dataset.
     """
     return ExampleTable(
