@@ -1,3 +1,5 @@
+**Project status:** We are currently focussing our attention on other projects.
+
 # Safe-DS Python Library - Examples
 
 [![PyPI](https://img.shields.io/pypi/v/safe-ds-examples)](https://pypi.org/project/safe-ds-examples)
