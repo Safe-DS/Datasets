@@ -1,3 +1,10 @@
+## [0.18.0](https://github.com/Safe-DS/Datasets/compare/v0.17.1...v0.18.0) (2024-04-26)
+
+
+### Features
+
+* update project metadata and structure ([#156](https://github.com/Safe-DS/Datasets/issues/156)) ([4fec1bd](https://github.com/Safe-DS/Datasets/commit/4fec1bd219b7d26ac5d6168a4da5d83b6bf63427))
+
 ## [0.17.1](https://github.com/Safe-DS/Datasets/compare/v0.17.0...v0.17.1) (2024-04-26)
 
 
