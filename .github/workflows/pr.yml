@@ -20,7 +20,7 @@ jobs:
     with:
       working-directory: .
       python-version: ${{ matrix.python-version }}
-      module-name: safeds_examples
+      module-name: safeds_datasets
       coverage: ${{ matrix.python-version == '3.11' }}
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

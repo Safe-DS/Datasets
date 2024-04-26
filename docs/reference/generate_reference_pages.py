@@ -12,7 +12,7 @@ from pathlib import Path
 import mkdocs_gen_files
 
 root = "src"
-package = "safeds_examples"
+package = "safeds_datasets"
 
 
 def list_class_and_function_names_in_module(module_name: str) -> list[str]:
