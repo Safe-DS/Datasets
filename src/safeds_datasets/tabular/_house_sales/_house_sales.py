@@ -2,12 +2,12 @@ from pathlib import Path
 
 from safeds.data.tabular.containers import Table
 
-from safeds_examples.tabular.containers import ExampleTable
+from safeds_datasets.tabular.containers import TabularDataset
 
 _path = Path(__file__).parent / "data" / "house_sales.csv"
 
 
-def load_house_sales() -> ExampleTable:
+def load_house_sales() -> TabularDataset:
     """
     Load the "House Sales" dataset.
 
@@ -16,7 +16,7 @@ def load_house_sales() -> ExampleTable:
     house_sales :
         The "House Sales" dataset.
     """
-    return ExampleTable(
+    return TabularDataset(
         Table.from_csv_file(str(_path)),
         column_descriptions={
             "id": "A unique identifier",

@@ -1,7 +1,7 @@
 # Safe-DS Datasets
 
 [![PyPI](https://img.shields.io/pypi/v/safe-ds-datasets)](https://pypi.org/project/safe-ds-datasets)
-[![Main](https://github.com/Safe-DS/Library-Examples/actions/workflows/main.yml/badge.svg)](https://github.com/Safe-DS/Library-Examples/actions/workflows/main.yml)
+[![Main](https://github.com/Safe-DS/Datasets/actions/workflows/main.yml/badge.svg)](https://github.com/Safe-DS/Datasets/actions/workflows/main.yml)
 [![codecov](https://codecov.io/gh/Safe-DS/Datasets/branch/main/graph/badge.svg?token=X5CU9V952H)](https://codecov.io/gh/Safe-DS/Datasets)
 [![Documentation Status](https://readthedocs.org/projects/stdlib-examples/badge/?version=stable)](https://datasets.safeds.com)
 
@@ -25,7 +25,7 @@ We welcome contributions from everyone. As a starting point, check the following
 
 * [Setting up a development environment](https://datasets.safeds.com/en/latest/development/environment/)
 * [Project guidelines](https://datasets.safeds.com/en/latest/development/project_guidelines/)
-* [Contributing page](https://github.com/Safe-DS/Library-Examples/contribute)
+* [Contributing page](https://github.com/Safe-DS/Datasets/contribute)
 
 If you need further help, please [use our discussion forum][forum].
 

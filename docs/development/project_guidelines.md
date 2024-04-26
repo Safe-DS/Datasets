@@ -1,6 +1,6 @@
 # Project Guidelines
 
-This document describes general guidelines for the Safe-DS Python Library Examples.
+This document describes general guidelines for the Safe-DS Datasets.
 
 ## Docstrings
 
@@ -211,8 +211,8 @@ adding new classes to it.
     ]
     ```
 
-[src-folder]: https://github.com/Safe-DS/Library-Examples/tree/main/src
-[tests-folder]: https://github.com/Safe-DS/Library-Examples/tree/main/tests
+[src-folder]: https://github.com/Safe-DS/Datasets/tree/main/src
+[tests-folder]: https://github.com/Safe-DS/Datasets/tree/main/tests
 [short-summary-section]: https://numpydoc.readthedocs.io/en/latest/format.html#short-summary
 [extended-summary-section]: https://numpydoc.readthedocs.io/en/latest/format.html#extended-summary
 [parameters-section]: https://numpydoc.readthedocs.io/en/latest/format.html#parameters

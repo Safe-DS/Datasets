@@ -37,7 +37,7 @@ coverage.xml
 
 # mkdocs
 /site/
-/docs/reference/safeds_examples/
+/docs/reference/safeds_datasets/
 /docs/reference/SUMMARY.md
 
 # MegaLinter

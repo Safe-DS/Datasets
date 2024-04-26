@@ -1,5 +1,5 @@
 {
-    "name": "safe-ds-library-examples",
+    "name": "safe-ds-datasets",
     "version": "0.0.1",
     "private": true,
     "prettier": "@lars-reimann/prettier-config",

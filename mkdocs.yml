@@ -1,6 +1,6 @@
-site_name: Safe-DS Python Library - Examples
-repo_url: https://github.com/Safe-DS/Library-Examples
-repo_name: Safe-DS/Library-Examples
+site_name: Safe-DS Datasets
+repo_url: https://github.com/Safe-DS/Datasets
+repo_name: Safe-DS/Datasets
 edit_uri: edit/main/docs/
 site_url: !ENV READTHEDOCS_CANONICAL_URL
 strict: true
@@ -9,14 +9,14 @@ nav:
   - Home:
     - README.md
     - Changelog: CHANGELOG.md
-  - Examples:
-    - House Sales: examples/house_sales.ipynb
-    - Titanic: examples/titanic.ipynb
+  - Datasets:
+    - House Sales: datasets/house_sales.ipynb
+    - Titanic: datasets/titanic.ipynb
   - API Reference: reference/
   - Development:
       - Environment: development/environment.md
       - Project Guidelines: development/project_guidelines.md
-      - Contributing 🌐: https://github.com/Safe-DS/Library-Examples/contribute
+      - Contributing 🌐: https://github.com/Safe-DS/Datasets/contribute
 
 # Configuration of MkDocs & Material for MkDocs --------------------------------
 

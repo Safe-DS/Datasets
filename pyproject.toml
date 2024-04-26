@@ -1,19 +1,19 @@
 [tool.poetry]
-name = "safe-ds-examples"
-version = "0.17.1"
-description = "Ready-to-use examples for the Safe-DS Python library."
+name = "safe-ds-datasets"
+version = "0.18.0"
+description = "Ready-to-use datasets for the Safe-DS Python library."
 license = "MIT"
 authors = ["Lars Reimann <mail@larsreimann.com>"]
 readme = "docs/README.md"
-repository = "https://github.com/Safe-DS/Library-Examples"
-documentation = "https://library-examples.safe-ds.com"
-keywords = ["data-science", "machine-learning", "usability", "learnability"]
+repository = "https://github.com/Safe-DS/Datasets"
+documentation = "https://datasets.safe-ds.com"
+keywords = ["data-science", "datasets", "machine-learning"]
 packages = [
-    { include = "safeds_examples", from = "src" },
+    { include = "safeds_datasets", from = "src" },
 ]
 
 [tool.poetry.dependencies]
-python = "^3.11,<3.12"
+python = "^3.11,<3.13"
 safe-ds = ">=0.17,<0.22"
 
 [tool.poetry.group.dev.dependencies]

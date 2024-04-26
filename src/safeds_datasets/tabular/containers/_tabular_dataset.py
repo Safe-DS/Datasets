@@ -2,7 +2,7 @@ from safeds.data.tabular.containers import Table
 from safeds.exceptions import UnknownColumnNameError
 
 
-class ExampleTable(Table):
+class TabularDataset(Table):
     """
     A `Table` with descriptions for its columns.
 
