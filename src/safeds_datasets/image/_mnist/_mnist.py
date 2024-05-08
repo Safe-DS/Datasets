@@ -2,7 +2,6 @@ import gzip
 import os
 import struct
 import sys
-import tempfile
 import urllib.request
 from array import array
 from pathlib import Path
@@ -160,16 +159,16 @@ def _load_mnist_like(path: str | Path, files: dict[str, str], labels: dict[int, 
             with gzip.open(path / file_path, mode='rb') as label_file:
                 magic, size = struct.unpack(">II", label_file.read(8))
                 if magic != 2049:
-                    raise ValueError(f"Magic number mismatch. Actual {magic} != Expected 2049.")
+                    raise ValueError(f"Magic number mismatch. Actual {magic} != Expected 2049.")  # pragma: no cover
                 if "train" in file_name:
                     train_labels = Column(file_name, [labels[label_index] for label_index in array("B", label_file.read())])
                 else:
-                    test_labels = Column(file_name, array("B", label_file.read()))
+                    test_labels = Column(file_name, [labels[label_index] for label_index in array("B", label_file.read())])
         else:
             with gzip.open(path / file_path, mode='rb') as image_file:
                 magic, size, rows, cols = struct.unpack(">IIII", image_file.read(16))
                 if magic != 2051:
-                    raise ValueError(f"Magic number mismatch. Actual {magic} != Expected 2051.")
+                    raise ValueError(f"Magic number mismatch. Actual {magic} != Expected 2051.")  # pragma: no cover
                 image_data = array("B", image_file.read())
                 image_tensor = torch.empty(size, 1, rows, cols)
                 for i in range(size):
@@ -183,7 +182,7 @@ def _load_mnist_like(path: str | Path, files: dict[str, str], labels: dict[int, 
                 else:
                     test_image_list = image_list
     if train_image_list is None or test_image_list is None or train_labels is None or test_labels is None:
-        raise ValueError
+        raise ValueError  # pragma: no cover
     return ImageDataset[Column](train_image_list, train_labels, 32, shuffle=True), ImageDataset[Column](test_image_list, test_labels, 32)
 
 
@@ -197,7 +196,7 @@ def _download_mnist_like(path: str | Path, files: dict[str, str], links: list[st
                 print()  # noqa: T201
                 break
             except HTTPError as e:
-                print(f"An error occurred while downloading: {e}")  # noqa: T201
+                print(f"An error occurred while downloading: {e}")  # noqa: T201  # pragma: no cover
 
 
 def _report_download_progress(current_packages: int, package_size: int, file_size: int) -> None:
