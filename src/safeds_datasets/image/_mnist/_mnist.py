@@ -91,7 +91,9 @@ def load_mnist(path: str | Path, download: bool = True) -> tuple[ImageDataset[Co
     if len(missing_files) > 0:
         if download:
             _download_mnist_like(
-                path, {name: f_path for name, f_path in _mnist_files.items() if f_path in missing_files}, _mnist_links,
+                path,
+                {name: f_path for name, f_path in _mnist_files.items() if f_path in missing_files},
+                _mnist_links,
             )
         else:
             raise FileNotFoundError(f"Could not find files {[str(path / file) for file in missing_files]}")
@@ -179,7 +181,9 @@ def load_kmnist(path: str | Path, download: bool = True) -> tuple[ImageDataset[C
 
 
 def _load_mnist_like(
-    path: str | Path, files: dict[str, str], labels: dict[int, str],
+    path: str | Path,
+    files: dict[str, str],
+    labels: dict[int, str],
 ) -> tuple[ImageDataset[Column], ImageDataset[Column]]:
     _init_default_device()
 
@@ -196,7 +200,8 @@ def _load_mnist_like(
                     raise ValueError(f"Magic number mismatch. Actual {magic} != Expected 2049.")
                 if "train" in file_name:
                     train_labels = Column(
-                        file_name, [labels[label_index] for label_index in array("B", label_file.read())],
+                        file_name,
+                        [labels[label_index] for label_index in array("B", label_file.read())],
                     )
                 else:
                     test_labels = Column(file_name, array("B", label_file.read()))
@@ -209,7 +214,8 @@ def _load_mnist_like(
                 image_tensor = torch.empty(size, 1, rows, cols)
                 for i in range(size):
                     image_tensor[i, 0] = torch.frombuffer(
-                        image_data[i * rows * cols : (i + 1) * rows * cols], dtype=torch.uint8,
+                        image_data[i * rows * cols : (i + 1) * rows * cols],
+                        dtype=torch.uint8,
                     ).reshape(rows, cols)
                 image_list = _SingleSizeImageList()
                 image_list._tensor = image_tensor
@@ -222,7 +228,9 @@ def _load_mnist_like(
     if train_image_list is None or test_image_list is None or train_labels is None or test_labels is None:
         raise ValueError
     return ImageDataset[Column](train_image_list, train_labels, 32, shuffle=True), ImageDataset[Column](
-        test_image_list, test_labels, 32,
+        test_image_list,
+        test_labels,
+        32,
     )
 
 
