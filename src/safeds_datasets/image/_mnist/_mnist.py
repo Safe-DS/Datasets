@@ -2,17 +2,21 @@ import gzip
 import os
 import struct
 import sys
+import tempfile
 import urllib.request
 from array import array
 from pathlib import Path
+from typing import TYPE_CHECKING
 from urllib.error import HTTPError
 
 import torch
 from safeds._config import _init_default_device
-from safeds.data.image.containers import ImageList
 from safeds.data.image.containers._single_size_image_list import _SingleSizeImageList
 from safeds.data.labeled.containers import ImageDataset
 from safeds.data.tabular.containers import Column
+
+if TYPE_CHECKING:
+    from safeds.data.image.containers import ImageList
 
 _mnist_links: list[str] = ["http://yann.lecun.com/exdb/mnist/", "https://ossci-datasets.s3.amazonaws.com/mnist/"]
 _mnist_files: dict[str, str] = {
@@ -158,7 +162,7 @@ def _load_mnist_like(path: str | Path, files: dict[str, str], labels: dict[int, 
                 if magic != 2049:
                     raise ValueError(f"Magic number mismatch. Actual {magic} != Expected 2049.")
                 if "train" in file_name:
-                    train_labels = Column(file_name, [labels[l] for l in array("B", label_file.read())])
+                    train_labels = Column(file_name, [labels[label_index] for label_index in array("B", label_file.read())])
                 else:
                     test_labels = Column(file_name, array("B", label_file.read()))
         else:
@@ -188,12 +192,12 @@ def _download_mnist_like(path: str | Path, files: dict[str, str], links: list[st
     for file_name, file_path in files.items():
         for link in links:
             try:
-                print(f"Trying to download file {file_name} via {link + file_path}")
+                print(f"Trying to download file {file_name} via {link + file_path}")  # noqa: T201
                 urllib.request.urlretrieve(link + file_path, path / file_path, reporthook=_report_download_progress)
-                print()
+                print()  # noqa: T201
                 break
             except HTTPError as e:
-                print(e)
+                print(f"An error occurred while downloading: {e}")  # noqa: T201
 
 
 def _report_download_progress(current_packages: int, package_size: int, file_size: int) -> None:
