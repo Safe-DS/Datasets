@@ -10,9 +10,9 @@ from safeds_datasets.image import load_mnist, _mnist, load_fashion_mnist, load_k
 
 class TestMNIST:
 
-    def test_should_download_and_return_mnist(self):
+    def test_should_download_and_return_mnist(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdirname:
-            train, test = load_mnist(tmpdirname, True)
+            train, test = load_mnist(tmpdirname, download=True)
             files = os.listdir(Path(tmpdirname) / _mnist._mnist._mnist_folder)
             for mnist_file in _mnist._mnist._mnist_files.values():
                 assert mnist_file in files
@@ -24,17 +24,17 @@ class TestMNIST:
             test_output = test.get_output()
             assert set(train_output.get_unique_values()) == set(test_output.get_unique_values()) == set(_mnist._mnist._mnist_labels.values())
 
-    def test_should_raise_if_file_not_found(self):
+    def test_should_raise_if_file_not_found(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdirname:
             with pytest.raises(FileNotFoundError):
-                load_mnist(tmpdirname, False)
+                load_mnist(tmpdirname, download=False)
 
 
 class TestFashionMNIST:
 
-    def test_should_download_and_return_mnist(self):
+    def test_should_download_and_return_mnist(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdirname:
-            train, test = load_fashion_mnist(tmpdirname, True)
+            train, test = load_fashion_mnist(tmpdirname, download=True)
             files = os.listdir(Path(tmpdirname) / _mnist._mnist._fashion_mnist_folder)
             for mnist_file in _mnist._mnist._fashion_mnist_files.values():
                 assert mnist_file in files
@@ -46,17 +46,17 @@ class TestFashionMNIST:
             test_output = test.get_output()
             assert set(train_output.get_unique_values()) == set(test_output.get_unique_values()) == set(_mnist._mnist._fashion_mnist_labels.values())
 
-    def test_should_raise_if_file_not_found(self):
+    def test_should_raise_if_file_not_found(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdirname:
             with pytest.raises(FileNotFoundError):
-                load_fashion_mnist(tmpdirname, False)
+                load_fashion_mnist(tmpdirname, download=False)
 
 
 class TestKMNIST:
 
-    def test_should_download_and_return_mnist(self):
+    def test_should_download_and_return_mnist(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdirname:
-            train, test = load_kmnist(tmpdirname, True)
+            train, test = load_kmnist(tmpdirname, download=True)
             files = os.listdir(Path(tmpdirname) / _mnist._mnist._kuzushiji_mnist_folder)
             for mnist_file in _mnist._mnist._kuzushiji_mnist_files.values():
                 assert mnist_file in files
@@ -68,7 +68,7 @@ class TestKMNIST:
             test_output = test.get_output()
             assert set(train_output.get_unique_values()) == set(test_output.get_unique_values()) == set(_mnist._mnist._kuzushiji_mnist_labels.values())
 
-    def test_should_raise_if_file_not_found(self):
+    def test_should_raise_if_file_not_found(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdirname:
             with pytest.raises(FileNotFoundError):
-                load_kmnist(tmpdirname, False)
+                load_kmnist(tmpdirname, download=False)
