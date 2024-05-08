@@ -25,8 +25,7 @@ class TestMNIST:
             assert set(train_output.get_unique_values()) == set(test_output.get_unique_values()) == set(_mnist._mnist._mnist_labels.values())
 
     def test_should_raise_if_file_not_found(self) -> None:
-        with tempfile.TemporaryDirectory() as tmpdirname:
-            with pytest.raises(FileNotFoundError):
+        with tempfile.TemporaryDirectory() as tmpdirname, pytest.raises(FileNotFoundError):
                 load_mnist(tmpdirname, download=False)
 
 
@@ -47,8 +46,7 @@ class TestFashionMNIST:
             assert set(train_output.get_unique_values()) == set(test_output.get_unique_values()) == set(_mnist._mnist._fashion_mnist_labels.values())
 
     def test_should_raise_if_file_not_found(self) -> None:
-        with tempfile.TemporaryDirectory() as tmpdirname:
-            with pytest.raises(FileNotFoundError):
+        with tempfile.TemporaryDirectory() as tmpdirname, pytest.raises(FileNotFoundError):
                 load_fashion_mnist(tmpdirname, download=False)
 
 
@@ -69,6 +67,5 @@ class TestKMNIST:
             assert set(train_output.get_unique_values()) == set(test_output.get_unique_values()) == set(_mnist._mnist._kuzushiji_mnist_labels.values())
 
     def test_should_raise_if_file_not_found(self) -> None:
-        with tempfile.TemporaryDirectory() as tmpdirname:
-            with pytest.raises(FileNotFoundError):
+        with tempfile.TemporaryDirectory() as tmpdirname, pytest.raises(FileNotFoundError):
                 load_kmnist(tmpdirname, download=False)
