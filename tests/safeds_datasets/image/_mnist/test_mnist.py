@@ -4,8 +4,7 @@ from pathlib import Path
 
 import pytest
 from safeds.data.labeled.containers import ImageDataset
-
-from safeds_datasets.image import load_mnist, _mnist, load_fashion_mnist, load_kmnist
+from safeds_datasets.image import _mnist, load_fashion_mnist, load_kmnist, load_mnist
 
 
 class TestMNIST:
@@ -22,11 +21,15 @@ class TestMNIST:
             assert len(test) == 10_000
             train_output = train.get_output()
             test_output = test.get_output()
-            assert set(train_output.get_unique_values()) == set(test_output.get_unique_values()) == set(_mnist._mnist._mnist_labels.values())
+            assert (
+                set(train_output.get_unique_values())
+                == set(test_output.get_unique_values())
+                == set(_mnist._mnist._mnist_labels.values())
+            )
 
     def test_should_raise_if_file_not_found(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdirname, pytest.raises(FileNotFoundError):
-                load_mnist(tmpdirname, download=False)
+            load_mnist(tmpdirname, download=False)
 
 
 class TestFashionMNIST:
@@ -43,11 +46,15 @@ class TestFashionMNIST:
             assert len(test) == 10_000
             train_output = train.get_output()
             test_output = test.get_output()
-            assert set(train_output.get_unique_values()) == set(test_output.get_unique_values()) == set(_mnist._mnist._fashion_mnist_labels.values())
+            assert (
+                set(train_output.get_unique_values())
+                == set(test_output.get_unique_values())
+                == set(_mnist._mnist._fashion_mnist_labels.values())
+            )
 
     def test_should_raise_if_file_not_found(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdirname, pytest.raises(FileNotFoundError):
-                load_fashion_mnist(tmpdirname, download=False)
+            load_fashion_mnist(tmpdirname, download=False)
 
 
 class TestKMNIST:
@@ -64,8 +71,12 @@ class TestKMNIST:
             assert len(test) == 10_000
             train_output = train.get_output()
             test_output = test.get_output()
-            assert set(train_output.get_unique_values()) == set(test_output.get_unique_values()) == set(_mnist._mnist._kuzushiji_mnist_labels.values())
+            assert (
+                set(train_output.get_unique_values())
+                == set(test_output.get_unique_values())
+                == set(_mnist._mnist._kuzushiji_mnist_labels.values())
+            )
 
     def test_should_raise_if_file_not_found(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdirname, pytest.raises(FileNotFoundError):
-                load_kmnist(tmpdirname, download=False)
+            load_kmnist(tmpdirname, download=False)

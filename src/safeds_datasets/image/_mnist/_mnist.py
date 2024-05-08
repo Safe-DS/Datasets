@@ -204,7 +204,9 @@ def _load_mnist_like(
                         [labels[label_index] for label_index in array("B", label_file.read())],
                     )
                 else:
-                    test_labels = Column(file_name, [labels[label_index] for label_index in array("B", label_file.read())])
+                    test_labels = Column(
+                        file_name, [labels[label_index] for label_index in array("B", label_file.read())],
+                    )
         else:
             with gzip.open(path / file_path, mode="rb") as image_file:
                 magic, size, rows, cols = struct.unpack(">IIII", image_file.read(16))
