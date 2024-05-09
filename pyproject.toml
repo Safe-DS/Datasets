@@ -14,7 +14,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.11,<3.13"
-safe-ds = "0.23.0"
+safe-ds = "^0.24.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = ">=7.2.1,<9.0.0"
@@ -34,10 +34,6 @@ mkdocs-section-index = "^0.3.9"
 mkdocs-jupyter = ">=0.23,<0.25"
 mkdocs-exclude = "^1.0.2"
 
-
-[tool.poetry.group.image_dataset_dev.dependencies]
-safe-ds = {git = "https://github.com/Safe-DS/Library.git"}
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
@@ -50,9 +46,3 @@ markers = [
 
 [tool.black]
 line-length = 120
-
-
-[[tool.poetry.source]]
-name = "torch_cuda121"
-url = "https://download.pytorch.org/whl/cu121"
-priority = "explicit"
