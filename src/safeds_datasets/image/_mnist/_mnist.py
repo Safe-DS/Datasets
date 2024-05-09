@@ -69,7 +69,7 @@ def load_mnist(path: str | Path, download: bool = True) -> tuple[ImageDataset[Co
     path:
         the path were the files are stored or will be downloaded to
     download:
-        weather the files should be downloaded to the given path
+        whether the files should be downloaded to the given path
 
     Returns
     -------
@@ -109,7 +109,7 @@ def load_fashion_mnist(path: str | Path, download: bool = True) -> tuple[ImageDa
     path:
         the path were the files are stored or will be downloaded to
     download:
-        weather the files should be downloaded to the given path
+        whether the files should be downloaded to the given path
 
     Returns
     -------
@@ -149,7 +149,7 @@ def load_kmnist(path: str | Path, download: bool = True) -> tuple[ImageDataset[C
     path:
         the path were the files are stored or will be downloaded to
     download:
-        weather the files should be downloaded to the given path
+        whether the files should be downloaded to the given path
 
     Returns
     -------
