@@ -3,6 +3,7 @@ import tempfile
 from pathlib import Path
 
 import pytest
+import torch
 from safeds.data.labeled.containers import ImageDataset
 from safeds_datasets.image import _mnist, load_fashion_mnist, load_kmnist, load_mnist
 
@@ -19,11 +20,16 @@ class TestMNIST:
             assert isinstance(test, ImageDataset)
             assert len(train) == 60_000
             assert len(test) == 10_000
+            assert (
+                train.get_input()._as_single_size_image_list()._tensor.dtype
+                == test.get_input()._as_single_size_image_list()._tensor.dtype
+                == torch.uint8
+            )
             train_output = train.get_output()
             test_output = test.get_output()
             assert (
-                set(train_output.get_unique_values())
-                == set(test_output.get_unique_values())
+                set(train_output.get_distinct_values())
+                == set(test_output.get_distinct_values())
                 == set(_mnist._mnist._mnist_labels.values())
             )
 
@@ -44,11 +50,16 @@ class TestFashionMNIST:
             assert isinstance(test, ImageDataset)
             assert len(train) == 60_000
             assert len(test) == 10_000
+            assert (
+                train.get_input()._as_single_size_image_list()._tensor.dtype
+                == test.get_input()._as_single_size_image_list()._tensor.dtype
+                == torch.uint8
+            )
             train_output = train.get_output()
             test_output = test.get_output()
             assert (
-                set(train_output.get_unique_values())
-                == set(test_output.get_unique_values())
+                set(train_output.get_distinct_values())
+                == set(test_output.get_distinct_values())
                 == set(_mnist._mnist._fashion_mnist_labels.values())
             )
 
@@ -69,11 +80,16 @@ class TestKMNIST:
             assert isinstance(test, ImageDataset)
             assert len(train) == 60_000
             assert len(test) == 10_000
+            assert (
+                train.get_input()._as_single_size_image_list()._tensor.dtype
+                == test.get_input()._as_single_size_image_list()._tensor.dtype
+                == torch.uint8
+            )
             train_output = train.get_output()
             test_output = test.get_output()
             assert (
-                set(train_output.get_unique_values())
-                == set(test_output.get_unique_values())
+                set(train_output.get_distinct_values())
+                == set(test_output.get_distinct_values())
                 == set(_mnist._mnist._kuzushiji_mnist_labels.values())
             )
 

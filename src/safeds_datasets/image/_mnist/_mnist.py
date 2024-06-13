@@ -214,7 +214,7 @@ def _load_mnist_like(
                 if magic != 2051:
                     raise ValueError(f"Magic number mismatch. Actual {magic} != Expected 2051.")  # pragma: no cover
                 image_data = array("B", image_file.read())
-                image_tensor = torch.empty(size, 1, rows, cols)
+                image_tensor = torch.empty(size, 1, rows, cols, dtype=torch.uint8)
                 for i in range(size):
                     image_tensor[i, 0] = torch.frombuffer(
                         image_data[i * rows * cols : (i + 1) * rows * cols],
