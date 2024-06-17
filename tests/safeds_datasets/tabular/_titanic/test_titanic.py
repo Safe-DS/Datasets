@@ -1,43 +1,40 @@
 import pytest
-from safeds.data.tabular.containers import Table
-from safeds.data.tabular.typing import Anything, Integer, RealNumber, Schema, String
 from safeds_datasets.tabular import load_titanic
+from safeds_datasets.tabular.containers import TableWithDescriptions
 
 
 class TestLoadTitanic:
     @pytest.fixture()
-    def titanic(self) -> Table:
+    def titanic(self) -> TableWithDescriptions:
         return load_titanic()
 
     @pytest.mark.smoke()
     def test_returns_table(self) -> None:
         titanic = load_titanic()
 
-        assert isinstance(titanic, Table)
+        assert isinstance(titanic, TableWithDescriptions)
 
-    def test_row_count(self, titanic: Table) -> None:
-        assert titanic.number_of_rows == 1309
+    def test_row_count(self, titanic: TableWithDescriptions) -> None:
+        assert titanic.data.row_count == 1309
 
-    def test_schema(self, titanic: Table) -> None:
-        assert titanic.schema == Schema(
-            {
-                "id": Integer(),
-                "name": String(),
-                "sex": String(),
-                "age": RealNumber(is_nullable=True),
-                "siblings_spouses": Integer(),
-                "parents_children": Integer(),
-                "ticket": String(),
-                "travel_class": Integer(),
-                "fare": RealNumber(is_nullable=True),
-                "cabin": Anything(is_nullable=True),
-                "port_embarked": Anything(is_nullable=True),
-                "survived": Integer(),
-            },
-        )
+    def test_column_names(self, titanic: TableWithDescriptions) -> None:
+        assert titanic.data.column_names == [
+            "id",
+            "name",
+            "sex",
+            "age",
+            "siblings_spouses",
+            "parents_children",
+            "ticket",
+            "travel_class",
+            "fare",
+            "cabin",
+            "port_embarked",
+            "survived",
+        ]
 
-    def test_columns_with_missing_values(self, titanic: Table) -> None:
-        actual_column_names = {column.name for column in titanic.to_columns() if column.has_missing_values()}
+    def test_columns_with_missing_values(self, titanic: TableWithDescriptions) -> None:
+        actual_column_names = {column.name for column in titanic.data.to_columns() if column.missing_value_count()}
 
         assert actual_column_names == {"age", "port_embarked", "fare", "cabin"}
 
@@ -47,4 +44,4 @@ class TestColumnDescriptions:
         titanic = load_titanic()
         descriptions = titanic.column_descriptions
 
-        assert set(descriptions.get_column("Name")._data) == set(titanic.column_names)
+        assert set(descriptions.get_column("Name").to_list()) == set(titanic.data.column_names)

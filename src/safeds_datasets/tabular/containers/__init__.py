@@ -1,5 +1,5 @@
 """Classes that can store tabular data."""
 
-from ._tabular_dataset import TabularDataset
+from ._table_with_descriptions import TableWithDescriptions
 
-__all__ = ["TabularDataset"]
+__all__ = ["TableWithDescriptions"]

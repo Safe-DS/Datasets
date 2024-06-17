@@ -2,22 +2,22 @@ from pathlib import Path
 
 from safeds.data.tabular.containers import Table
 
-from safeds_datasets.tabular.containers import TabularDataset
+from safeds_datasets.tabular.containers import TableWithDescriptions
 
 _path = Path(__file__).parent / "data" / "house_sales.csv"
 
 
-def load_house_sales() -> TabularDataset:
+def load_house_sales() -> TableWithDescriptions:
     """
     Load the "House Sales" dataset.
 
     Returns
     -------
-    house_sales :
+    house_sales:
         The "House Sales" dataset.
     """
-    return TabularDataset(
-        Table.from_csv_file(str(_path)),
+    return TableWithDescriptions(
+        Table.from_csv_file(_path),
         column_descriptions={
             "id": "A unique identifier",
             "year": "Year of sale",

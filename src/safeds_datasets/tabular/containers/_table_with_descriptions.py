@@ -1,34 +1,35 @@
+from safeds._validation import _check_columns_exist
 from safeds.data.tabular.containers import Table
-from safeds.exceptions import UnknownColumnNameError
 
 
-class TabularDataset(Table):
+class TableWithDescriptions:
     """
     A `Table` with descriptions for its columns.
 
     Parameters
     ----------
-    table
+    table:
         The table.
-    column_descriptions
+    column_descriptions:
         A dictionary mapping column names to their descriptions.
 
     Raises
     ------
-    UnknownColumnNameError
+    ColumnNotFoundError
         If a column name in `descriptions` does not exist in `table`.
     """
 
-    # noinspection PyMissingConstructor
     def __init__(self, table: Table, column_descriptions: dict[str, str]) -> None:
         # Check that all column names in `descriptions` exist in `table`
-        invalid_column_names = set(column_descriptions.keys()) - set(table.column_names)
-        if invalid_column_names:
-            raise UnknownColumnNameError(list(invalid_column_names))
+        _check_columns_exist(table, list(column_descriptions.keys()))
 
-        self._data = table._data
-        self._schema = table.schema
+        self._data = table
         self._descriptions = column_descriptions
+
+    @property
+    def data(self) -> Table:
+        """The data."""
+        return self._data
 
     @property
     def column_descriptions(self) -> Table:
@@ -39,8 +40,8 @@ class TabularDataset(Table):
         """
         return Table(
             {
-                "Name": self.column_names,
-                "Description": [self.get_column_description(column_name) for column_name in self.column_names],
+                "Name": self._data.column_names,
+                "Description": [self.get_column_description(column_name) for column_name in self._data.column_names],
             },
         )
 
@@ -50,20 +51,19 @@ class TabularDataset(Table):
 
         Parameters
         ----------
-        column_name
+        column_name:
             The name of the column.
 
         Returns
         -------
-        column_description :
+        column_description:
             The description of the column.
 
         Raises
         ------
-        UnknownColumnNameError
+        ColumnNotFoundError
             If no column with the given name exists.
         """
-        if column_name not in self.column_names:
-            raise UnknownColumnNameError([column_name])
+        _check_columns_exist(self._data, [column_name])
 
         return self._descriptions.get(column_name, "")
