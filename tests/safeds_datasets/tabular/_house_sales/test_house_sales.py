@@ -1,54 +1,51 @@
 import pytest
-from safeds.data.tabular.containers import Table
-from safeds.data.tabular.typing import Integer, RealNumber, Schema
 from safeds_datasets.tabular import load_house_sales
+from safeds_datasets.tabular.containers import TableWithDescriptions
 
 
 class TestLoadHouseSales:
     @pytest.fixture()
-    def house_sales(self) -> Table:
+    def house_sales(self) -> TableWithDescriptions:
         return load_house_sales()
 
     @pytest.mark.smoke()
     def test_returns_table(self) -> None:
         house_sales = load_house_sales()
 
-        assert isinstance(house_sales, Table)
+        assert isinstance(house_sales, TableWithDescriptions)
 
-    def test_row_count(self, house_sales: Table) -> None:
-        assert house_sales.number_of_rows == 21613
+    def test_row_count(self, house_sales: TableWithDescriptions) -> None:
+        assert house_sales.data.row_count == 21613
 
-    def test_schema(self, house_sales: Table) -> None:
-        assert house_sales.schema == Schema(
-            {
-                "id": Integer(),
-                "year": Integer(),
-                "month": Integer(),
-                "day": Integer(),
-                "zipcode": Integer(),
-                "latitude": RealNumber(),
-                "longitude": RealNumber(),
-                "sqft_lot": Integer(),
-                "sqft_living": Integer(),
-                "sqft_above": Integer(),
-                "sqft_basement": Integer(),
-                "floors": RealNumber(),
-                "bedrooms": Integer(),
-                "bathrooms": RealNumber(),
-                "waterfront": Integer(),
-                "view": Integer(),
-                "condition": Integer(),
-                "grade": Integer(),
-                "year_built": Integer(),
-                "year_renovated": Integer(),
-                "sqft_lot_15nn": Integer(),
-                "sqft_living_15nn": Integer(),
-                "price": Integer(),
-            },
-        )
+    def test_column_names(self, house_sales: TableWithDescriptions) -> None:
+        assert house_sales.data.column_names == [
+            "id",
+            "year",
+            "month",
+            "day",
+            "zipcode",
+            "latitude",
+            "longitude",
+            "sqft_lot",
+            "sqft_living",
+            "sqft_above",
+            "sqft_basement",
+            "floors",
+            "bedrooms",
+            "bathrooms",
+            "waterfront",
+            "view",
+            "condition",
+            "grade",
+            "year_built",
+            "year_renovated",
+            "sqft_lot_15nn",
+            "sqft_living_15nn",
+            "price",
+        ]
 
-    def test_columns_with_missing_values(self, house_sales: Table) -> None:
-        actual_column_names = {column.name for column in house_sales.to_columns() if column.has_missing_values()}
+    def test_columns_with_missing_values(self, house_sales: TableWithDescriptions) -> None:
+        actual_column_names = {column.name for column in house_sales.data.to_columns() if column.missing_value_count()}
 
         assert actual_column_names == set()
 
@@ -58,4 +55,4 @@ class TestColumnDescriptions:
         house_sales = load_house_sales()
         descriptions = house_sales.column_descriptions
 
-        assert set(descriptions.get_column("Name")._data) == set(house_sales.column_names)
+        assert set(descriptions.get_column("Name").to_list()) == set(house_sales.data.column_names)
