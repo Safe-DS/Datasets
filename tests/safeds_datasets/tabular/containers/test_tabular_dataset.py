@@ -1,7 +1,6 @@
 import pytest
 from safeds.data.tabular.containers import Column, Table
 from safeds.exceptions import ColumnNotFoundError
-
 from safeds_datasets.tabular.containers import TableWithDescriptions
 
 
