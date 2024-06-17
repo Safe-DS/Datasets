@@ -1,45 +1,29 @@
 """Display column descriptions."""
 
-import pandas as pd
-from IPython.core.display_functions import DisplayHandle
-from IPython.display import display
+from __future__ import annotations
+
+from IPython.core.display import DisplayObject
+from IPython.display import Markdown
 from safeds.data.tabular.containers import Table
 
 
-def display_column_descriptions(column_descriptions: Table) -> DisplayHandle:
+def display_column_descriptions(column_descriptions: Table) -> DisplayObject:
     """
     Display a Table containing the column descriptions.
 
     Parameters
     ----------
-    column_descriptions : Table
+    column_descriptions:
         The column descriptions.
 
     Returns
     -------
-    DisplayHandle
-        The display handle.
+    display_object:
+        The display object.
     """
-    # Remember the current value of the max_colwidth option
-    max_colwidth = pd.get_option("max_colwidth")
+    result = ""
 
-    # Don't cut off the column descriptions
-    pd.set_option("max_colwidth", None)
+    for name, description in column_descriptions._data_frame.iter_rows():
+        result += f"- **{name}:** {description}\n"
 
-    # Create a DisplayHandle that displays the column descriptions nicely
-    styler = (
-        column_descriptions._data.style.relabel_index(["Name", "Description"], axis="columns")
-        .hide(axis="index")
-        .set_properties(
-            **{
-                "text-align": "left",
-                "white-space": "pre-wrap",
-            },
-        )
-    )
-    result = display(styler)
-
-    # Restore the max_colwidth option
-    pd.set_option("max_colwidth", max_colwidth)
-
-    return result
+    return Markdown(result)
