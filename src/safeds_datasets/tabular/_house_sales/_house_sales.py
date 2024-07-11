@@ -2,22 +2,22 @@ from pathlib import Path
 
 from safeds.data.tabular.containers import Table
 
-from safeds_datasets.tabular.containers import TabularDataset
+from safeds_datasets.tabular.containers import TableWithDescriptions
 
 _path = Path(__file__).parent / "data" / "house_sales.csv"
 
 
-def load_house_sales() -> TabularDataset:
+def load_house_sales() -> TableWithDescriptions:
     """
     Load the "House Sales" dataset.
 
     Returns
     -------
-    house_sales :
+    house_sales:
         The "House Sales" dataset.
     """
-    return TabularDataset(
-        Table.from_csv_file(str(_path)),
+    return TableWithDescriptions(
+        Table.from_csv_file(_path),
         column_descriptions={
             "id": "A unique identifier",
             "year": "Year of sale",
@@ -33,7 +33,7 @@ def load_house_sales() -> TabularDataset:
             "floors": "Number of floors",
             "bedrooms": "Number of bedrooms",
             "bathrooms": (
-                "Number of bathrooms.\n\n"
+                "Number of bathrooms. "
                 "Fractional values indicate that components (toilet/sink/shower/bathtub) are missing."
             ),
             "waterfront": "Whether the building overlooks a waterfront (0 = no, 1 = yes)",
@@ -42,7 +42,7 @@ def load_house_sales() -> TabularDataset:
             "grade": "Rating of building construction and design (1 to 13, higher is better)",
             "year_built": "Year the house was built",
             "year_renovated": (
-                "Year the house was last renovated.\n\nA value of 0 indicates that it was never renovated."
+                "Year the house was last renovated. A value of 0 indicates that it was never renovated."
             ),
             "sqft_lot_15nn": "Lot area of the 15 nearest neighbors in square feet",
             "sqft_living_15nn": "Interior living space of the 15 nearest neighbors in square feet",

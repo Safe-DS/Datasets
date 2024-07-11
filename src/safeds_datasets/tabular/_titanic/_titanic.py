@@ -2,22 +2,22 @@ from pathlib import Path
 
 from safeds.data.tabular.containers import Table
 
-from safeds_datasets.tabular.containers import TabularDataset
+from safeds_datasets.tabular.containers import TableWithDescriptions
 
 _path = Path(__file__).parent / "data" / "titanic.csv"
 
 
-def load_titanic() -> TabularDataset:
+def load_titanic() -> TableWithDescriptions:
     """
     Load the "Titanic" dataset.
 
     Returns
     -------
-    titanic :
+    titanic:
         The "Titanic" dataset.
     """
-    return TabularDataset(
-        Table.from_csv_file(str(_path)),
+    return TableWithDescriptions(
+        Table.from_csv_file(_path),
         column_descriptions={
             "id": "A unique identifier",
             "name": "Name of the passenger",
