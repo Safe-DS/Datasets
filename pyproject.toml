@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "safe-ds-datasets"
-version = "0.18.0"
+version = "0.19.0"
 description = "Ready-to-use datasets for the Safe-DS Python library."
 license = "MIT"
 authors = ["Lars Reimann <mail@larsreimann.com>"]

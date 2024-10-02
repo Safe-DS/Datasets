@@ -1,3 +1,15 @@
+## [0.19.0](https://github.com/Safe-DS/Datasets/compare/v0.18.0...v0.19.0) (2024-10-02)
+
+### Features
+
+* added MNIST, Fashion-MNIST and KMNIST datasets ([#164](https://github.com/Safe-DS/Datasets/issues/164)) ([97ae47a](https://github.com/Safe-DS/Datasets/commit/97ae47a8ec7d2d09cafbdc5b53c137b71017ce38)), closes [#161](https://github.com/Safe-DS/Datasets/issues/161) [#162](https://github.com/Safe-DS/Datasets/issues/162) [#163](https://github.com/Safe-DS/Datasets/issues/163)
+
+### Bug Fixes
+
+* **deps:** bump jinja2 from 3.1.3 to 3.1.4 ([#160](https://github.com/Safe-DS/Datasets/issues/160)) ([e3bcc83](https://github.com/Safe-DS/Datasets/commit/e3bcc8329b0bdd6baf6331159ee705cbfa8666a1)), closes [/jinja.palletsprojects.com/en/3.1.x/changes/#version-3-1-4](https://github.com/Safe-DS//jinja.palletsprojects.com/en/3.1.x/changes//issues/version-3-1-4) [/jinja.palletsprojects.com/en/3.1.x/changes/#version-3-1-4](https://github.com/Safe-DS//jinja.palletsprojects.com/en/3.1.x/changes//issues/version-3-1-4) [#1968](https://github.com/Safe-DS/Datasets/issues/1968) [#5457](https://github.com/Safe-DS/Datasets/issues/5457)
+* **deps:** bump scikit-learn from 1.4.2 to 1.5.0 ([#178](https://github.com/Safe-DS/Datasets/issues/178)) ([a3389c9](https://github.com/Safe-DS/Datasets/commit/a3389c90cedf129e7d9482343e2b1507a91734a5)), closes [#29039](https://github.com/Safe-DS/Datasets/issues/29039) [#29007](https://github.com/Safe-DS/Datasets/issues/29007) [#27108](https://github.com/Safe-DS/Datasets/issues/27108) [#28592](https://github.com/Safe-DS/Datasets/issues/28592) [#28951](https://github.com/Safe-DS/Datasets/issues/28951) [#29029](https://github.com/Safe-DS/Datasets/issues/29029)
+* **deps:** bump urllib3 from 2.2.1 to 2.2.2 ([#177](https://github.com/Safe-DS/Datasets/issues/177)) ([5f20711](https://github.com/Safe-DS/Datasets/commit/5f20711f659fc2b5030533b3cffe1e0eb2ffe610)), closes [#3122](https://github.com/Safe-DS/Datasets/issues/3122) [#3363](https://github.com/Safe-DS/Datasets/issues/3363) [#3122](https://github.com/Safe-DS/Datasets/issues/3122) [#3363](https://github.com/Safe-DS/Datasets/issues/3363) [#3406](https://github.com/Safe-DS/Datasets/issues/3406) [#3398](https://github.com/Safe-DS/Datasets/issues/3398) [#3399](https://github.com/Safe-DS/Datasets/issues/3399) [#3396](https://github.com/Safe-DS/Datasets/issues/3396) [#3394](https://github.com/Safe-DS/Datasets/issues/3394) [#3391](https://github.com/Safe-DS/Datasets/issues/3391) [#3316](https://github.com/Safe-DS/Datasets/issues/3316) [#3387](https://github.com/Safe-DS/Datasets/issues/3387) [#3386](https://github.com/Safe-DS/Datasets/issues/3386)
+
 ## [0.18.0](https://github.com/Safe-DS/Datasets/compare/v0.17.1...v0.18.0) (2024-04-26)
 
 
