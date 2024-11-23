@@ -1,5 +1,7 @@
 # Safe-DS Datasets
 
+**Project status:** We are currently focussing our attention on other projects.
+
 [![PyPI](https://img.shields.io/pypi/v/safe-ds-datasets)](https://pypi.org/project/safe-ds-datasets)
 [![Main](https://github.com/Safe-DS/Datasets/actions/workflows/main.yml/badge.svg)](https://github.com/Safe-DS/Datasets/actions/workflows/main.yml)
 [![codecov](https://codecov.io/gh/Safe-DS/Datasets/branch/main/graph/badge.svg?token=X5CU9V952H)](https://codecov.io/gh/Safe-DS/Datasets)
