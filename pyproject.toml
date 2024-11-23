@@ -18,7 +18,7 @@ safe-ds = ">=0.24,<0.29"
 
 [tool.poetry.group.dev.dependencies]
 pytest = ">=7.2.1,<9.0.0"
-pytest-cov = "^5.0.0"
+pytest-cov = ">=5,<7"
 
 [tool.poetry.group.docs.dependencies]
 jupyter = "^1.0.0"
